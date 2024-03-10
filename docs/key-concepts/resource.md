@@ -1,4 +1,4 @@
-# Terraform Key concepts
+# Azure NoOps Terraform Key concepts
 
 The official Terraform documentation describes all aspects of [terraform configuration](https://www.terraform.io/docs/configuration/index.html) in details. Read it carefully to understand the rest of this section.
 
