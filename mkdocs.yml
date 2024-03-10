@@ -59,6 +59,7 @@ nav:
       - terraform/index.md
       - terraform/prerequisites.md
       - terraform/syntax.md
+      - terraform/use-case.md
       - terraform/create-resources.md
       - terraform/update-resources.md
       - terraform/destroy-resources.md
@@ -67,6 +68,7 @@ nav:
       - noops/index.md
       - noops/prerequisites.md
       - noops/syntax.md
+      - noops/use-case.md
       - noops/create-resources.md
       - noops/update-resources.md
       - noops/destroy-resources.md

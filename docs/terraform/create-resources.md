@@ -20,6 +20,24 @@ Let's create an Azure Storage account using Terraform:
     }
     ```
 
+1. Create a vnet and subnet in the resource group:
+
+    ```terraform
+    resource "azurerm_virtual_network" "example" {
+      name                = "example-network"
+      location            = data.azurerm_resource_group.example.location
+      resource_group_name = data.azurerm_resource_group.example.name
+      address_space       = ["10.0.0.1/16"] # Replace with your address space
+    }
+
+    resource "azurerm_subnet" "example" {
+      name                 = "internal"
+      resource_group_name  = data.azurerm_resource_group.example.name
+      virtual_network_name = azurerm_virtual_network.example.name
+      address_prefixes     = ["10.0.1.1/26"] # Replace with your address prefix
+    }
+    ```
+
 1. Create a random suffix for resource names using the built-in random provider, and an Azure Storage account in the resource group:
 
     ```terraform
@@ -33,6 +51,94 @@ Let's create an Azure Storage account using Terraform:
       location                 = data.azurerm_resource_group.example.location
       account_tier             = "Standard"
       account_replication_type = "LRS"
+    }
+    ```
+
+1. Create a storage container in the storage account:
+
+    ```terraform
+    resource "azurerm_storage_container" "example" {
+      name                  = "example-container"
+      storage_account_name  = azurerm_storage_account.example.name
+      container_access_type = "private"
+    }
+    ```
+
+1. Create network rules for the storage account:
+
+    ```terraform
+    resource "azurerm_storage_account_network_rules" "example" {
+      resource_group_name  = data.azurerm_resource_group.example.name
+      storage_account_name = azurerm_storage_account.example.name
+
+      default_action             = "Deny"
+      bypass                     = ["AzureServices"]
+      virtual_network_subnet_ids = [azurerm_subnet.example.id]
+    }
+    ```
+
+1. Create a private endpoint for the storage account:
+
+    ```terraform
+    resource "azurerm_private_endpoint" "example" {
+      name                = "example-endpoint"
+      location            = data.azurerm_resource_group.example.location
+      resource_group_name = data.azurerm_resource_group.example.name
+
+      subnet_id = azurerm_subnet.example.id
+
+      private_service_connection {
+        name                           = "example-connection"
+        private_connection_resource_id = azurerm_storage_account.example.id
+        is_manual_connection           = false
+      }
+    }
+
+    resource "azurerm_private_dns_zone" "example" {
+      name                = "privatelink.blob.core.windows.net"
+      resource_group_name = data.azurerm_resource_group.example.name
+    }
+
+    resource "azurerm_private_dns_a_record" "example" {
+      name                = "example-a-record"
+      zone_name           = azurerm_private_dns_zone.example.name
+      resource_group_name = data.azurerm_resource_group.example.name
+      ttl                 = 300
+      records             = [azurerm_private_endpoint.example.private_ip_address]
+    }
+    ```
+
+1. Create a customer managed key for the storage account:
+
+    ```terraform
+    resource "azurerm_storage_account_customer_managed_key" "example" {
+      storage_account_id = azurerm_storage_account.example.id
+      key_vault_key_id   = azurerm_key_vault_key.example.id
+    }
+
+    resource "azurerm_key_vault" "example" {
+      name                = "example-kv"
+      resource_group_name = data.azurerm_resource_group.example.name
+      location            = data.azurerm_resource_group.example.location
+      sku_name            = "standard"
+      tenant_id           = data.azurerm_client_config.current.tenant_id
+    }
+
+    resource "azurerm_key_vault_key" "example" {
+      name         = "example-key"
+      key_vault_id = azurerm_key_vault.example.id
+      key_type     = "RSA"
+      key_size     = 2048
+    }
+
+    resource "azurerm_key_vault_access_policy" "example" {
+      key_vault_id = azurerm_key_vault.example.id
+      tenant_id    = data.azurerm_client_config.current.tenant_id
+
+      certificate_permissions = ["get", "list"]
+      key_permissions         = ["get", "list"]
+      secret_permissions      = ["get", "list"]
+      storage_permissions     = ["get", "list"]
     }
     ```
 
@@ -50,6 +156,20 @@ Let's create an Azure Storage account using Terraform:
 
     resource "random_id" "suffix" {
       byte_length = 4
+    }
+
+    resource "azurerm_virtual_network" "example" {
+      name                = "example-network"
+      location            = data.azurerm_resource_group.example.location
+      resource_group_name = data.azurerm_resource_group.example.name
+      address_space       = ["10.0.0.1/16"] # Replace with your address space
+    }
+
+    resource "azurerm_subnet" "example" {
+      name                 = "internal"
+      resource_group_name  = data.azurerm_resource_group.example.name
+      virtual_network_name = azurerm_virtual_network.example.name
+      address_prefixes     = ["10.0.1.1/26"] # Replace with your address prefix
     }
 
     resource "azurerm_storage_account" "example" {

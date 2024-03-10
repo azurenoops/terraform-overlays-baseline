@@ -25,10 +25,10 @@ Using the Azure CLI, create a resource group in Azure to contain the resources c
 1. Create a resource group:
 
     ```console
-    $ az group create -n example-rg -l northeurope -o table
+    $ az group create -n example-rg -l eastus -o table
     Location     Name
     -----------  ----------
-    northeurope  example-rg
+    eastus       example-rg
     ```
 
 Now we're ready to start learning about Terraform, starting with the basic syntax.
