@@ -1,5 +1,7 @@
 # Use Case
 
+This is a use case for creating an Azure Storage Account using Terraform. Each solution is meant to show the differences between building in Terraform using AzureRM modules and using Azure NoOps composite modules.
+
 ## Problem
 
 In our project, we are using Terraform to provision and manage our infrastructure in Azure. As part of this process, we need a reliable and scalable storage solution to store the documents. We need a solution that can handle large amounts of data and provide high availability and redundancy. We also need a solution that is secure and durable, and can be easily integrated with our existing infrastructure in Azure. We need a solution that can be easily managed and maintained, and that can grow with our needs over time.
