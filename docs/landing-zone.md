@@ -1,6 +1,6 @@
 # Deploy a Landing Zone starter in Azure NoOps
 
-This document provides guidance on how to deploy a Landing Zone starter in Azure NoOps.
+This document provides guidance on how to deploy a Mission Enclave Landing Zone starter in Azure NoOps.
 
 ## Prerequisites
 
