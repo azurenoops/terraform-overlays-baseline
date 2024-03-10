@@ -50,7 +50,6 @@ nav:
     - Overview: best-practices.md
   - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
   - Deployment guide:
-    - Overview: deployment-guide.md
     - Landing Zone Starter: landing-zone.md  
     - Policy Starter: policy.md
     - Sentinel Starter: sentinel.md

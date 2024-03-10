@@ -1,4 +1,4 @@
-# Azure NoOps Terraform Baseline
+# Azure NoOps Terraform Overlays Baseline
 
 Azure NoOps Terraform Overlays Baseline (ETB) is:
 
