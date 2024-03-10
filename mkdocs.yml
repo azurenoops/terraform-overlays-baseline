@@ -48,6 +48,9 @@ nav:
     - Overview: index.md
   - Best practices:
     - Overview: best-practices.md
+  - Key concepts:
+    - Terraform: key-concepts/resource.md
+    - Azure NoOps: key-concepts/resource.md
   - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
   - Deployment guide:
     - Landing Zone Starter: landing-zone.md  
