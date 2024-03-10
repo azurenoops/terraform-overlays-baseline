@@ -48,12 +48,22 @@ nav:
     - Overview: index.md
   - Best practices:
     - Overview: best-practices.md
-  - Key concepts:
-    - Terraform: key-concepts/resource.md
-    - Azure NoOps: key-concepts/resource.md
-  - Code structure:
-    - Overview: code-structure.md
-  - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
+    - Key concepts: key-concepts/resource.md
+    - Code structure: code-structure.md
+    - Naming conventions: naming-conventions.md
+    - Security: security.md
+    - Compliance: compliance.md
+    - Monitoring: monitoring.md  
+  - Get started:
+    - get-started/index.md
+    - get-started/prerequisites.md
+    - get-started/syntax.md
+    - get-started/create-resources.md
+    - get-started/update-resources.md
+    - get-started/destroy-resources.md
+    - get-started/summary.md
+  - Reusable modules:
+    - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
   - Deployment guide:
     - Landing Zone Starter: landing-zone.md  
     - Policy Starter: policy.md

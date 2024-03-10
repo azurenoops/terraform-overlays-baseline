@@ -5,7 +5,7 @@ This document provides guidance on how to deploy a Mission Enclave Landing Zone 
 ## Prerequisites
 
 - Current version of the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-- The version of the [Terraform CLI](https://www.terraform.io/downloads.html) described in the [.devcontainer Dockerfile](../.devcontainer/Dockerfile)
+- The version of the [Terraform CLI](https://www.terraform.io/downloads.html) described in the [.devcontainer Dockerfile](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/devcontainer/Dockerfile)
 - An Azure Subscription(s) where you or an identity you manage has `Owner` [RBAC permissions](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner)
 
 <!-- markdownlint-disable MD013 -->
@@ -16,7 +16,7 @@ This document provides guidance on how to deploy a Mission Enclave Landing Zone 
 
 Below is an example of a Terraform deployment that uses all the defaults in the [TFVARS folder](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars) to deploy the landing zone to one subscription.
 
->NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the [`backend "local" {}` block in the versions.tf](./../infrastructure/terraform/versions.tf) file. This will allow you to deploy the landing zone without having to deploy the remote state storage account first.
+>NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the [`backend "local" {}` block in the versions.tf](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/versions.tf) file. This will allow you to deploy the landing zone without having to deploy the remote state storage account first.
 
 ```bash
 cd infrastructure/terraform
@@ -27,7 +27,7 @@ terraform apply anoa.dev.plan
 
 ## Planning
 
-If you want to change the default values, you can do so by editing the [parameters.tfvars](../infrastructure/terraform/tfvars/parameters.tfvars) file. The following sections describe the parameters that can be changed.
+If you want to change the default values, you can do so by editing the [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars) file. The following sections describe the parameters that can be changed.
 
 ### One Subscription or Multiple
 
@@ -46,11 +46,11 @@ Parameter name | Default Value | Description
 
 The remote state storage account is used to store the Terraform state files. The state files contain the current state of the infrastructure that has been deployed. The state files are used by Terraform to determine what changes need to be made to the infrastructure when a deployment is run.
 
-To find out more about remote state, see the [Remote State documentation](./07-Remote-State-Storage.md).
+To find out more about remote state, see the [Remote State documentation](./Remote-State-Storage.md).
 
 ### Mission Enclave Landing Zone Global Configuration
 
-The following parameters affect the "01 Global Configuration". To override the defaults edit the variables file at [parameters.tfvars](../infrastructure/terraform/tfvars/parameters.tfvars).
+The following parameters affect the "01 Global Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -65,7 +65,7 @@ Parameter name | Default Value | Description
 
 ### Mission Enclave Management Groups
 
-The following parameters affect the "02 Management Groups Configuration" To override the defaults edit the variables file at [parameters.tfvars](../infrastructure/terraform/tfvars/parameters.tfvars).
+The following parameters affect the "02 Management Groups Configuration" To override the defaults edit the variables file at [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -75,7 +75,7 @@ Parameter name | Default Value | Description
 `root_management_group_id` | anoa | The root management group id for this subscription
 `root_management_group_display_name` | anoa | The root management group display name for this subscription
 
-To modify the management group structure, go to the [locals.tf](../infrastructure/terraform/locals.tf) file and modify the 'management_groups' section. The 'root_management_group_id' is used for the top level groups.
+To modify the management group structure, go to the [locals.tf](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/locals.tf) file and modify the 'management_groups' section. The 'root_management_group_id' is used for the top level groups.
 
 ## Manual Deployment
 
@@ -118,7 +118,7 @@ Before provisioning any Azure resources with Terraform you must [initialize a wo
     cd infrastructure/terraform
     ```
 
->NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the `backend "local" {}` block in the [versions.tf](./../infrastructure/terraform/versions.tf) file. This will allow you to deploy the landing zone without having to deploy the remote state storage account first. For more information on remote state, see the [Remote State documentation](../docs/07-Remote-State-Storage.md).
+>NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the `backend "local" {}` block in the [versions.tf](./../infrastructure/terraform/versions.tf) file. This will allow you to deploy the landing zone without having to deploy the remote state storage account first. For more information on remote state, see the [Remote State documentation](./docs/remote-state-storage.md).
 
 1. Execute `terraform init`
 
