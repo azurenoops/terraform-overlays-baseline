@@ -51,6 +51,6 @@ nav:
   - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
   - Deployment guide:
     - Landing Zone Starter: landing-zone.md  
-    - Policy Starter: best-practices.md
-    - Sentinel Starter: best-practices.md
+    - Policy Starter: policy.md
+    - Sentinel Starter: sentinel.md
     - Terraform Remote State: remote-state.md
