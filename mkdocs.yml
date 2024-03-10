@@ -1,4 +1,4 @@
-site_name: Azure NoOps Terraform Overlays Baseline
+site_name: Azure NoOps Terraform Baseline Guide
 
 repo_name: azurenoops/terraform-overlays-baseline
 repo_url: hhttps://github.com/azurenoops/terraform-overlays-baseline
@@ -51,9 +51,17 @@ nav:
   - Key concepts:
     - Terraform: key-concepts/resource.md
     - Azure NoOps: key-concepts/resource.md
+  - Code structure:
+    - Overview: code-structure.md
   - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
   - Deployment guide:
     - Landing Zone Starter: landing-zone.md  
     - Policy Starter: policy.md
     - Sentinel Starter: sentinel.md
     - Terraform Remote State: remote-state.md
+  - Demos:
+    - Overview: demos.md
+  - FAQ:
+    - Overview: faq.md
+  - Azure NoOps Workshop:
+    - Overview: workshop.md
