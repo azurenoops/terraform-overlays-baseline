@@ -1,29 +1,29 @@
 # Best practices
 
-This document provides best practices for developing reusable Terraform modules in Equinor.
+This document provides best practices for developing reusable Terraform modules in Azure NoOps.
 
 ## Repository
 
-- Use [this template](https://github.com/equinor/terraform-module-template) when creating your repository.
+- Use [this template](https://github.com/azurenoops/terraform-module-overlays-template) when creating your repository.
 
-- Use the common naming convention `terraform-azurerm-<name>` when naming your repository.
+- Use the common naming convention `terraform-azurerm-overlays-<name>` when naming your repository.
 
-    For example, if you want to create a module named `storage`, the repository should be named `terraform-azurerm-storage`.
+    For example, if you want to create a module named `storage`, the repository should be named `terraform-azurerm-overlays-storage`.
 
 - Configure the following accesses for the repository:
 
     | Team | Role |
     | --- | --- |
-    | @equinor/terraform-baseline | `Write` |
-    | @equinor/terraform-baseline-admins | `Admin` |
+    | @azurenoops/terraform-overlays-baseline | `Write` |
+    | @azurenoops/terraform-overlays-baseline-admins | `Admin` |
 
 - Configure the following code owners in a file `.github/CODEOWNERS`:
 
     ```raw
-    * @equinor/terraform-baseline
+    * @azurenoops/terraform-overlays-baseline
     ```
 
-- Add topic `terraform-baseline` to the repository.
+- Add topic `terraform-overlays-baseline` to the repository.
 
 ## Roles and scope
 
@@ -92,8 +92,8 @@ Variables and outputs should follow a common naming convention `<resource>_<bloc
 
 ## Modules
 
-- A single module call should create a single instance of the main resource created by the module. For example, the `web-app` module should create a single web app, and the `sql` module should create a single database. This creates a common expectation for the behavior of our modules.
-- A module should not create just a single resource. Exceptions can be made if that resource requires complex configuration or a stringent set of predefined parameters.
+- A single module call should create a single instance of the main resource created by the module. For example, the `web-app` module should create a single web app, and the `sql` module should create a single database. This creates a common expectation for the behavior of our overlay modules.
+- A overlay module should not create just a single resource. Exceptions can be made if that resource requires complex configuration or a stringent set of predefined parameters.
 
 ### Control plane and data plane
 

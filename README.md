@@ -1,10 +1,10 @@
-# Equinor Terraform Baseline
+# Azure NoOps Terraform Baseline
 
-[![ci](https://github.com/equinor/terraform-baseline/actions/workflows/ci.yml/badge.svg)](https://github.com/equinor/terraform-baseline/actions/workflows/ci.yml)
+[![ci](https://github.com/azurenoops/terraform-baseline/actions/workflows/ci.yml/badge.svg)](hhttps://github.com/azurenoops/terraform-baseline/actions/workflows/ci.yml)
 
-Equinor Terraform Baseline (ETB) is a collection of tutorials on how to get started with Terraform in Equinor.
+Azure NoOps Terraform Overlays Baseline (ETB) is a collection of tutorials amd guides on how to get started with Terraform in Azure NoOps.
 
-Hosted in [GitHub Pages](https://equinor.github.io/terraform-baseline/).
+Hosted in [GitHub Pages](https://azurenoops.github.io/terraform-overlays-baseline/).
 
 ## Development
 
@@ -21,15 +21,13 @@ Hosted in [GitHub Pages](https://equinor.github.io/terraform-baseline/).
 1. Create and activate virtual environment:
 
     ```console
-    python -m venv "venv"
-    . "venv\Scripts\activate"
+    python -m venv "venv" . "venv\Scripts\activate"
     ```
 
 1. Install requirements:
 
     ```console
-    python -m pip install --upgrade pip
-    pip install -r "requirements.txt"
+    python -m pip install --upgrade pip pip install -r "requirements.txt"
     ```
 
 1. Run development server:

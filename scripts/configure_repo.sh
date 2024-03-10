@@ -4,11 +4,11 @@ set -eu
 
 module_name=$1
 
-repo="equinor/terraform-azurerm-$module_name"
+repo="Azure NoOps/terraform-azurerm-$module_name"
 default_branch="main"
 
 gh repo edit "$repo" \
-  --homepage "https://registry.terraform.io/modules/equinor/$module_name/azurerm/latest" \
+  --homepage "https://registry.terraform.io/modules/Azure NoOps/$module_name/azurerm/latest" \
   --add-topic "terraform-baseline" \
   --enable-wiki=false \
   --enable-issues=true \

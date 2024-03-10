@@ -8,7 +8,7 @@ Create a GitHub issue for the vulnerability and ask the maintainer to reach our 
 
 ### For "critical" and time sensitive issues
 
-Send email to [it-security@equinor.com](mailto:it-security@equinor.com) or​ phone the Equinor helpdesk:
+Send email to [it-security@Azure NoOps.com](mailto:it-security@Azure NoOps.com) or​ phone the Azure NoOps helpdesk:
 
 - Norway (+47) 51 999 222
 - US/Canada (+1) 713 878 6970

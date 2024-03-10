@@ -1,6 +1,6 @@
 # Create resources
 
-Let's create an Azure Storage account using Terraform:
+Let's create an Azure NoOps Storage account using Terraform:
 
 1. Create a file `main.tf`.
 

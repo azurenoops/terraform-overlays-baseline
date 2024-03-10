@@ -1,12 +1,12 @@
-site_name: Equinor Terraform Baseline
+site_name: Azure NoOps Terraform Overlays Baseline
 
-repo_name: equinor/terraform-baseline
-repo_url: https://github.com/equinor/terraform-baseline
+repo_name: azurenoops/terraform-overlays-baseline
+repo_url: hhttps://github.com/azurenoops/terraform-overlays-baseline
 
 theme:
   name: material
   icon:
-    logo: fontawesome/solid/cube # Set icon to cube to represent the baseline as a "building block"
+    logo: fontawesome/solid/laptop-code # Set icon to cube to represent the baseline as a "building block"
     repo: fontawesome/brands/github
   features:
   - navigation.instant # Make MkDocs behave like a Single Page Application (SPA).
@@ -48,4 +48,9 @@ nav:
     - Overview: index.md
   - Best practices:
     - Overview: best-practices.md
-  - Module library: https://registry.terraform.io/search/modules?namespace=equinor&provider=azure
+  - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
+  - Deployment guide:
+    - Landing Zone Starter: landing-zone.md  
+    - Policy Starter: best-practices.md
+    - Sentinel Starter: best-practices.md
+    - Terraform Remote State: remote-state.md
