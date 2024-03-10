@@ -44,19 +44,25 @@ Putting it all together, the following diagram shows how the different concepts 
 
 ```bash
 composition-1 (Mission Enclave Landing Zone Starter) {
-  infrastructure-module-1 (Management Hub) {
+  infrastructure-module-1 (Landing Zone Management Hub) {
     data-source-1 (Lookup for Resource Group) => d1
 
-    resource-module-1 (Virtual Network, Subnet, NSG, etc) {
+    resource-module-1 (terraform-azurerm-overlays-storage-account) (Storage Account, blobs, tables, etc) {
       data-source-2 => d2
-      resource-1 (d1, d2)
+      resource-1 (azurerm_storage_account, d2)
       resource-2 (d2)
     }
 
-    resource-module-2 (Storage Account, blobs, tables, etc){
+    resource-module-2 (terraform-azurerm-overlays-DNS) (DNS zone, records, etc) {
       data-source-3 => d3
-      resource-3 (d1, d3)
+      resource-3 (d2, d3)
       resource-4 (d3)
+    }
+
+    resource-module-3 (terraform-azurerm-overlays-key-vault) (Key Vault, access policy, etc) {
+      data-source-4 => d34
+      resource-5 (d3, d4)
+      resource-6 (d4)
     }
   }
 }
