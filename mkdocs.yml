@@ -55,11 +55,11 @@ nav:
     - Compliance: best-practices/compliance.md
     - Monitoring: best-practices/monitoring.md  
   - Basics:
-    - Use Case: terraform/use-case.md
     - Terraform:
       - terraform/index.md
       - terraform/prerequisites.md
-      - terraform/syntax.md
+      - terraform/use-case.md
+      - terraform/syntax.md      
       - terraform/create-resources.md
       - terraform/update-resources.md
       - terraform/destroy-resources.md
@@ -67,6 +67,7 @@ nav:
     - Azure NoOps:
       - noops/index.md
       - noops/prerequisites.md
+      - noops/use-case.md
       - noops/syntax.md
       - noops/create-resources.md
       - noops/update-resources.md
