@@ -16,3 +16,48 @@ An infrastructure module is a collection of resource modules, which can be logic
 
 For example, terraform-azurerm-overlays-management-hub module uses resource modules like terraform-azurerm-overlays-storage-account and terraform-azurerm-overlays-dns to manage the infrastructure required for running Managment Hub on Azure NoOps Mission Enclave.
 
+## Composition
+
+Composition is a collection of infrastructure modules, which can span across several logically separated areas (e.g.., Azure Regions, several Azure accounts). Composition is used to describe the complete infrastructure required for the whole organization or project.
+
+A composition consists of infrastructure modules, which consist of resources modules, which implement individual resources.
+
+## Data source
+
+Data source performs a read-only operation and is dependant on provider configuration, it is used in a resource module and an infrastructure module.
+
+Data source terraform_remote_state acts as a glue for higher-level modules and compositions.
+
+The [external data source](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) allows an external program to act as a data source, exposing arbitrary data for use elsewhere in the Terraform configuration. Here is an example from the [Azure NoOps Virtual Machine overlay module]() module where the virtual machine is built by calling an bash script.
+
+The [http data source](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) makes an HTTP GET request to the given URL and exports information about the response which is often useful to get information from endpoints where a native Terraform provider does not exist.
+
+## Remote state
+
+Infrastructure modules and compositions should persist their [Terraform state](https://www.terraform.io/docs/language/state/index.html) in a remote location where it can be retrieved by others in a controllable way (e.g., specify ACL, versioning, logging).
+
+## Provider, provisioner, etc
+
+Providers, provisioners, and a few other terms are described very well in the official documentation and there is no point to repeat it here.
+
+Putting it all together, the following diagram shows how the different concepts are connected:
+
+```bash
+composition-1 (Mission Enclave Landing Zone Starter) {
+  infrastructure-module-1 (Management Hub) {
+    data-source-1 (Lookup for Resource Group) => d1
+
+    resource-module-1 (Virtual Network, Subnet, NSG, etc) {
+      data-source-2 => d2
+      resource-1 (d1, d2)
+      resource-2 (d2)
+    }
+
+    resource-module-2 (Storage Account, blobs, tables, etc){
+      data-source-3 => d3
+      resource-3 (d1, d3)
+      resource-4 (d3)
+    }
+  }
+}
+```
