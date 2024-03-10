@@ -40,7 +40,15 @@ Infrastructure modules and compositions should persist their [Terraform state](h
 
 Providers, provisioners, and a few other terms are described very well in the official documentation and there is no point to repeat it here.
 
-Putting it all together, the following diagram shows how the different concepts are connected:
+## Putting it all together
+
+Think of individual resources are like atoms in the infrastructure, resource modules are molecules (consisting of atoms). A module is the smallest versioned and shareable unit. It has an exact list of arguments, implement basic logic for such a unit to do the required function. e.g., terraform-azurerm-overlays-key-vault module creates azurerm_keyvault and azurerm_keyvault_access_policy resources based on input. This resource module by itself can be used together with other modules to create the infrastructure module.
+
+Access to data across molecules (resource modules and infrastructure modules) is performed using the modules' outputs and data sources.
+
+Access between compositions is often performed using remote state data sources. There are multiple ways to share data between configurations.
+
+The following diagram shows how the different concepts are connected:
 
 ```bash
 composition-1 (Mission Enclave Landing Zone Starter) {
