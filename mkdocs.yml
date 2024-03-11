@@ -73,7 +73,9 @@ nav:
   - Reusable modules:
     - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
   - Deployment guide:
-    - Landing Zone Starter: deployment/landing-zone.md  
+    - Landing Zone Starter: 
+      - deployment/landing-zone.md  
+      - deployment/landing_zone_networking.md 
     - Policy Starter: deployment/policy.md
     - Sentinel Starter: deployment/sentinel.md
     - Terraform Remote State: deployment/remote-state-storage.md
