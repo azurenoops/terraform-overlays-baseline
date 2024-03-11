@@ -1,4 +1,4 @@
-# Best practices
+# Developing Terraform modules in Azure NoOps
 
 This document provides best practices for developing reusable Terraform modules in Azure NoOps.
 
