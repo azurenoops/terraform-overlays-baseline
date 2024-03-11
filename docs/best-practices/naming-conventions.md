@@ -31,7 +31,7 @@
     `resource "azurerm_route_table" "public_azurerm_route_table" {}`
     ```
 
-2. Resource name should be named `this` if there is no more descriptive and general name available, or if the resource module creates a single resource of this type (eg, in [azurerm VPC module](https://github.com/terraform-azurerm-modules/terraform-azurerm-virtual-network) there is a single resource of type `azurerm_nat_gateway` and multiple resources of type`azurerm_route_table`, so `azurerm_nat_gateway` should be named `this` and `azurerm_route_table` should have more descriptive names - like `private`, `public`, `database`).
+2. Resource name should be named `this` if there is no more descriptive and general name available, or if the resource module creates a single resource of this type (eg, in [azurerm virtual machine module](https://github.com/terraform-azurerm-modules/terraform-azurerm-virtual-machine) there is a single resource of type `azurerm_virtual_machine` and multiple resources of type`azurerm_network_interface`, so `azurerm_virtual_machine` should be named `this` and `azurerm_network_interface` should have more descriptive names - like `private`, `public`, `database`).
 
 3. Always use singular nouns for names.
 
@@ -45,9 +45,9 @@
 
 ## Code examples of `resource`
 
-## Code examples of resource
+### Usage of `for_each` with `map`
 
-### Usage of for_each with map
+ > **Good**
 
 ```terraform
 resource "azurerm_virtual_machine" "example" {
@@ -65,7 +65,27 @@ resource "azurerm_virtual_machine" "example" {
 }
 ```
 
-### Usage of for_each with list
+> **Bad**
+
+```terraform
+resource "azurerm_virtual_machine" "example" {
+  name                  = "${var.create_vm ? "example" : "none"}-${each.key}"
+  location              = azurerm_resource_group.example.location
+  resource_group_name   = azurerm_resource_group.example.name
+  for_each = var.create_vm ? {
+    a = "a",
+    b = "b",
+    c = "c"
+  } : {}
+  .
+  .
+  .
+}
+```
+
+### Usage of `for_each` with `list`
+
+> **Good**
 
 ```terraform
 resource "azurerm_virtual_machine" "example" {
@@ -79,7 +99,9 @@ resource "azurerm_virtual_machine" "example" {
 }
 ```
 
-### Usage of for_each with set
+### Usage of `for_each` with `set`
+
+> **Good**
 
 ```terraform
 resource "azurerm_virtual_machine" "example" {
@@ -93,17 +115,20 @@ resource "azurerm_virtual_machine" "example" {
 }
 ```
 
-### Usage of for_each with a module
+### Usage of `for_each` with a `module`
+
+> **Good**
 
 ```terraform
 module "example" {
-  for_each = var.create_vm ? {
+  for_each = var.create_storage_account ? {
     a = "a",
     b = "b",
     c = "c"
   } : {}
-  source = "./modules/vm"
-  name                  = "${var.create_vm ? "example" : "none"}-${each.key}"
+  source = "azurenoops/ovarlays-storage-account/azurerm"
+  version = "~> 3.0.0"
+  name                  = "${var.create_storage_account ? "example" : "none"}-${each.key}"
   location              = azurerm_resource_group.example.location
   resource_group_name   = azurerm_resource_group.example.name
   .
@@ -112,7 +137,9 @@ module "example" {
 }
 ```
 
-### Usage of for_each with a module and count
+### Usage of `for_each` with a `module` and `count`
+
+> **Good**
 
 ```terraform
 module "example" {
@@ -132,9 +159,11 @@ module "example" {
 }
 ```
 
-## Conditions in count
+## Conditions in `count`
 
-Count should be used to create multiple instances of the same resource. It should not be used to create different resources based on a condition. Use for_each for that. 
+Count should be used to create multiple instances of the same resource. It should not be used to create different resources based on a condition. Use for_each for that.
+
+> **Best**
 
 ```terraform
 resource "azurerm_virtual_machine" "example" {
@@ -148,11 +177,27 @@ resource "azurerm_virtual_machine" "example" {
 }
 ```
 
-## Placement of tags
+> **Good but not Best**
+
+```terraform
+resource "azurerm_virtual_machine" "example" {
+  count = length(var.virtual_machines) > 0 ? 1 : 0
+  name                  = "${var.create_vm ? "example" : "none"}"
+  location              = azurerm_resource_group.example.location
+  resource_group_name   = azurerm_resource_group.example.name
+  .
+  .
+  .
+}
+```
+
+## Placement of `tags`
 
 Tags should be placed in the resource module, not in the infrastructure module. This is because tags are specific to the resource and not to the infrastructure. The infrastructure module should not have any tags.
 
-### Code examples of tags
+### Code examples of `tags`
+
+> **Good**
 
 ```terraform
 resource "azurerm_virtual_machine" "example" {
@@ -168,11 +213,25 @@ resource "azurerm_virtual_machine" "example" {
 }
 ```
 
-## Usage of locals
+> **Bad**
+
+```terraform
+resource "azurerm_virtual_machine" "example" {
+  name                  = "example"
+  tags                  = "${var.tags}"
+  location              = azurerm_resource_group.example.location
+  resource_group_name   = azurerm_resource_group.example.name
+  .
+  .
+  .
+}
+```
+
+## Usage of `locals`
 
 Locals are used to define values that are used in multiple places in the configuration. They are used to avoid repeating the same value in multiple places. They are also used to define complex values that are used in multiple places in the configuration.
 
-### Code examples of locals
+### Code examples of `locals`
 
 ```terraform
 locals {
@@ -202,7 +261,7 @@ locals {
 
 - Value {} is sometimes a map but sometimes an object. Use tomap(...) to make a map because there is no way to make an object.
 
-### Code examples of variables
+### Code examples of `variables`
 
 ```terraform
 variable "storage_account_name" {
@@ -236,7 +295,7 @@ Make outputs consistent and understandable outside of its scope (when a user is 
 
 - Value {} is sometimes a map but sometimes an object. Use tomap(...) to make a map because there is no way to make an object.
 
-### Code examples of output
+### Code examples of `outputs`
 
 ```terraform
 output "storage_account_id" {
@@ -245,7 +304,7 @@ output "storage_account_id" {
 }
 ```
 
-#### Use plural name if the returning value is a list
+#### Use plural name if the returning value is a `list`
 
 ```terraform
 output "storage_account_ids" {
