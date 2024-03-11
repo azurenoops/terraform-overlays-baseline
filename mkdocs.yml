@@ -72,20 +72,21 @@ nav:
       - noops/summary.md
   - Reusable modules:
     - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
+  - Developing Modules:
+    - Overview: developing-modules/overview.md
+    - Module structure: developing-modules/module-structure.md
+    - Module testing: developing-modules/module-testing.md
+    - Module documentation: developing-modules/module-documentation.md
   - Deployment guide:
-    - Landing Zone Starter: 
-      - deployment/landing-zone.md  
+    - Landing Zone Starter:
+      - Manual Deployment: deployment/landing-zone-manual.md 
+      - GitHub Deployment: deployment/landing-zone-github.md 
       - deployment/landing_zone_networking.md
       - deployment/landing-zone-cleanup.md 
     - Policy Starter: deployment/policy.md
     - Sentinel Starter: deployment/sentinel.md
     - Terraform Remote State: deployment/remote-state-storage.md
     - GitHub Actions: deployment/github-actions.md
-  - Developing Modules:
-    - Overview: developing-modules/overview.md
-    - Module structure: developing-modules/module-structure.md
-    - Module testing: developing-modules/module-testing.md
-    - Module documentation: developing-modules/module-documentation.md
   - Demos:
     - Overview: demos.md
   - FAQ:
