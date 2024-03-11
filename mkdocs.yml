@@ -75,10 +75,12 @@ nav:
   - Deployment guide:
     - Landing Zone Starter: 
       - deployment/landing-zone.md  
-      - deployment/landing_zone_networking.md 
+      - deployment/landing_zone_networking.md
+      - deployment/landing-zone-cleanup.md 
     - Policy Starter: deployment/policy.md
     - Sentinel Starter: deployment/sentinel.md
     - Terraform Remote State: deployment/remote-state-storage.md
+    - GitHub Actions: deployment/github-actions.md
   - Developing Modules:
     - Overview: developing-modules/overview.md
     - Module structure: developing-modules/module-structure.md
