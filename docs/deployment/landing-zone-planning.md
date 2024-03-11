@@ -12,11 +12,17 @@ Before getting started with this module, please take note of the following consi
 
     > **NOTE:** New releases of the module may contain features which require the minimum supported versions to be increased, but changes will be clearly documented in the release notes, user guide, and readme.
 
+## Mission Enclave Landing Zone Remote State Storage Account
+
+The remote state storage account is used to store the Terraform state files. The state files contain the current state of the infrastructure that has been deployed. The state files are used by Terraform to determine what changes need to be made to the infrastructure when a deployment is run.
+
+To find out more about remote state, see the [Remote State documentation](./remote-state-storage.md).
+
 ## Deployment Planning
 
 If you want to change the default values, you can do so by editing the [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars) file. The following sections describe the parameters that can be changed.
 
-## One Subscription or Multiple
+### One Subscription or Multiple
 
 Mission Enclave Landing Zone starter can deploy to a single subscription or multiple subscriptions. A test and evaluation deployment may deploy everything to a single subscription, and a production deployment may place each tier into its own subscription.
 
@@ -29,13 +35,7 @@ Parameter name | Default Value | Description
 `subscription_id_operations` | value of hub_subid | Subscription ID for operations tier
 `subscription_id_devsecops` | value of hub_subid | Subscription ID for devsecops tier
 
-## Mission Enclave Landing Zone Remote State Storage Account
-
-The remote state storage account is used to store the Terraform state files. The state files contain the current state of the infrastructure that has been deployed. The state files are used by Terraform to determine what changes need to be made to the infrastructure when a deployment is run.
-
-To find out more about remote state, see the [Remote State documentation](./remote-state-storage.md).
-
-## Mission Enclave Landing Zone Global Configuration
+### Mission Enclave Landing Zone Global Configuration
 
 The following parameters affect the "01 Global Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars).
 
@@ -50,7 +50,7 @@ Parameter name | Default Value | Description | Possible Values
 `enable_resource_locks` | false | Enable locks on resources. |  true , false
 `enable_traffic_analytics` | true | Enable NSG Flow Logs. |  true , false
 
-## Mission Enclave Management Groups
+### Mission Enclave Management Groups
 
 The following parameters affect the "02 Management Groups Configuration" To override the defaults edit the variables file at [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars).
 
