@@ -39,12 +39,14 @@ provider "azurerm" {
 }
 ```
 
-### Resource blocks
+### Module blocks
 
-Use resource blocks to create new resources:
+Use module blocks to create new Azure NoOps resources:
 
 ```terraform
-resource "<provider>_<resource>" "<name>" {
+module "mod_<module>" "<name>" {
+  source="<module>"
+  version="<version>"
   <argument> = <value>
 }
 ```
@@ -52,9 +54,10 @@ resource "<provider>_<resource>" "<name>" {
 For example:
 
 ```terraform
-resource "azurerm_storage_account" "example" {
-  name                     = "examplest"
-  resource_group_name      = "example-rg"
+module "mod_storage_account" "example" {
+  source="azurenoops/terraform-azurerm-overlays-storage-account/azurerm"
+  version="0.1.0"
+  name                     = "examplest"  
   location                 = "northeurope"
   account_tier             = "Standard"
   account_replication_type = "LRS"
@@ -90,12 +93,14 @@ data "azurerm_resource_group" "example" {
   name = "example-rg"
 }
 
-resource "azurerm_storage_account" "example" {
-  name                     = "examplest"
-  resource_group_name      = data.azurerm_resource_group.example.name
-  location                 = data.azurerm_resource_group.example.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+module "mod_storage_account" "example" {
+  source="azurenoops/terraform-azurerm-overlays-storage-account/azurerm"
+  version="0.1.0"
+  
+  existing_resource_group_name   = data.azurerm_resource_group.example.name
+  location                       = data.azurerm_resource_group.example.location
+  account_tier                   = "Standard"
+  account_replication_type       = "LRS"
 }
 ```
 

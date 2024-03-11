@@ -22,13 +22,4 @@ Using the Azure CLI, create a resource group in Azure to contain the resources c
     az account set -s <SUBSCRIPTION_NAME_OR_ID>
     ```
 
-1. Create a resource group:
-
-    ```console
-    $ az group create -n example-rg -l northeurope -o table
-    Location     Name
-    -----------  ----------
-    northeurope  example-rg
-    ```
-
-Now we're ready to start learning about Terraform, starting with the basic syntax.
+Now we're ready to start learning about AZure NoOps, starting with the basic syntax.
