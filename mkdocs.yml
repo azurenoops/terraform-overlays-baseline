@@ -99,6 +99,12 @@ nav:
       - deployment/sentinel-policy.md
       - deployment/sentinel-github.md
       - deployment/sentinel-faq.md
+    - Encrypted Transport Starter:
+      - Overview: deployment/encrypted-transport.md
+      - deployment/encrypted-transport-planning.md
+      - deployment/encrypted-transport-implementation.md
+      - deployment/encrypted-transport-github.md
+      - deployment/encrypted-transport-faq.md
     - Terraform Remote State: deployment/remote-state-storage.md
     - GitHub Actions: deployment/github-actions.md
   - Demos:
