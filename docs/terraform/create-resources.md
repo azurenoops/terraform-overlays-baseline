@@ -2,15 +2,47 @@
 
 Let's create an Azure Storage account using Terraform:
 
-1. Create a file `main.tf`.
+1. Open Visual Studio Code.
+
+1. Create a file `versions.tf`.
 
 1. Configure the Azure provider:
 
     ```terraform
+    terraform {
+      required_version = ">= 1.3"
+      required_providers {
+        azurerm = {
+          source  = "hashicorp/azurerm"
+          version = "~> 3.36"
+        }
+      }
+    }
+
     provider "azurerm" {
       features {}
     }
     ```
+
+<details><summary>Show `versions.tf` contents</summary>
+    ```console
+    terraform {
+      required_version = ">= 1.3"
+      required_providers {
+        azurerm = {
+          source  = "hashicorp/azurerm"
+          version = "~> 3.36"
+        }
+      }
+    }
+    
+    provider "azurerm" {
+      features {}
+    }
+    ```
+    </details>
+
+1. Create a file `data.tf`.
 
 1. Read the Azure resource group you created into Terraform by using a data source:
 
@@ -19,6 +51,188 @@ Let's create an Azure Storage account using Terraform:
       name = "example-rg"
     }
     ```
+
+<details><summary>Show `data.tf` contents</summary>
+    ```console
+    data "azurerm_resource_group" "example" {
+      name = "example-rg"
+    }
+    ```
+    </details>
+
+1. Create a file `variables.global.tf`.
+
+1. Define the global variables:
+
+    ```terraform
+    variable "deploy_environment" {
+      description = "The environment in which the resources will be created."
+      default = "dev"
+    }
+
+    variable "org_name" {
+      description = "The name of the organization."
+      default = "anoa"
+    }
+
+    variable "environment" {
+      description = "The environment in which the resources will be created."
+      default = "public"
+    }
+
+    variable "workload_name" {
+      description = "The name of the workload."
+      default = "storage"
+    }
+
+    variable "location" {
+      description = "The location/region where the resources will be created."
+      default     = "northeurope"
+    }
+    ```
+
+<details><summary>Show `variables.global.tf` contents</summary>
+    ```console
+    variable "deploy_environment" {
+      description = "The environment in which the resources will be created."
+      default = "dev"
+    }
+
+    variable "org_name" {
+      description = "The name of the organization."
+      default = "anoa"
+    }
+
+    variable "environment" {
+      description = "The environment in which the resources will be created."
+      default = "public"
+    }
+
+    variable "workload_name" {
+      description = "The name of the workload."
+      default = "storage"
+    }
+
+    variable "location" {
+      description = "The location/region where the resources will be created."
+      default     = "northeurope"
+    }
+    ```
+    </details>
+
+1. Create a file `variables.storage.account.tf`.
+
+1. Define the variables for the storage account:
+
+    ```terraform
+    variable "storage_account_name" {
+      description = "The name of the storage account."
+      default     = "examplest"
+    }
+
+    variable "storage_account_tier" {
+      description = "The storage account tier."
+      default     = "Standard"
+    }
+
+    variable "storage_account_replication_type" {
+      description = "The storage account replication type."
+      default     = "LRS"
+    }
+
+    variable "storage_account_location" {
+      description = "The location of the storage account."
+      default     = "northeurope"
+    }
+
+    variable "storage_account_container_name" {
+      description = "The name of the storage account container."
+      default     = "example-container"
+    }
+    ```
+
+<details><summary>Show `variables.storage.account.tf` contents</summary>
+    ```console
+    variable "storage_account_name" {
+      description = "The name of the storage account."
+      default     = "examplest"
+    }
+
+    variable "storage_account_tier" {
+      description = "The storage account tier."
+      default     = "Standard"
+    }
+
+    variable "storage_account_replication_type" {
+      description = "The storage account replication type."
+      default     = "LRS"
+    }
+
+    variable "storage_account_location" {
+      description = "The location of the storage account."
+      default     = "northeurope"
+    }
+
+    variable "storage_account_container_name" {
+      description = "The name of the storage account container."
+      default     = "example-container"
+    }
+    ```
+
+    </details>
+
+1. Create a file `variables.virtual.network.tf`.
+
+1. Define the variables for the virtual network:
+
+    ```terraform
+    variable "vnet_name" {
+      description = "The name of the virtual network."
+      default     = "example-network"
+    }
+
+    variable "vnet_address_space" {
+      description = "The address space of the virtual network."
+      default     = ""
+    }
+
+    variable "subnet_name" {
+      description = "The name of the subnet."
+      default     = "internal"
+    }
+
+    variable "subnet_address_prefix" {
+      description = "The address prefix of the subnet."
+      default     = ""
+    }
+    ```
+
+<details><summary>Show `variables.virtual.network.tf` contents</summary>
+    ```console
+    variable "vnet_name" {
+      description = "The name of the virtual network."
+      default     = "example-network"
+    }
+
+    variable "vnet_address_space" {
+      description = "The address space of the virtual network."
+      default     = ""
+    }
+
+    variable "subnet_name" {
+      description = "The name of the subnet."
+      default     = "internal"
+    }
+
+    variable "subnet_address_prefix" {
+      description = "The address prefix of the subnet."
+      default     = ""
+    }
+    ```
+
+    </details>
+
+1. Create a file `resources.virtual.network.tf`.
 
 1. Create a vnet and subnet in the resource group:
 
@@ -37,6 +251,26 @@ Let's create an Azure Storage account using Terraform:
       address_prefixes     = ["10.0.1.1/26"] # Replace with your address prefix
     }
     ```
+
+<details><summary>Show `resources.virtual.network.tf` contents</summary>
+    ```console
+    resource "azurerm_virtual_network" "example" {
+      name                = "example-network"
+      location            = data.azurerm_resource_group.example.location
+      resource_group_name = data.azurerm_resource_group.example.name
+      address_space       = ["10.0.0.1/16"] # Replace with your address space
+    }
+
+    resource "azurerm_subnet" "example" {
+      name                 = "internal"
+      resource_group_name  = data.azurerm_resource_group.example.name
+      virtual_network_name = azurerm_virtual_network.example.name
+      address_prefixes     = ["10.0.1.1/26"] # Replace with your address prefix
+    }
+    ```
+    </details>
+
+1. Create a file `resources.storage.account.tf`.
 
 1. Create a random suffix for resource names using the built-in random provider, and an Azure Storage account in the resource group:
 
@@ -77,6 +311,39 @@ Let's create an Azure Storage account using Terraform:
     }
     ```
 
+<details><summary>Show `resources.storage.account.tf` contents</summary>
+    ```console
+    resource "random_id" "suffix" {
+      byte_length = 4
+    }
+
+    resource "azurerm_storage_account" "example" {
+      name                     = "examplest${random_id.suffix.hex}"
+      resource_group_name      = data.azurerm_resource_group.example.name
+      location                 = data.azurerm_resource_group.example.location
+      account_tier             = "Standard"
+      account_replication_type = "LRS"
+    }
+
+    resource "azurerm_storage_container" "example" {
+      name                  = "example-container"
+      storage_account_name  = azurerm_storage_account.example.name
+      container_access_type = "private"
+    }
+
+    resource "azurerm_storage_account_network_rules" "example" {
+      resource_group_name  = data.azurerm_resource_group.example.name
+      storage_account_name = azurerm_storage_account.example.name
+
+      default_action             = "Deny"
+      bypass                     = ["AzureServices"]
+      virtual_network_subnet_ids = [azurerm_subnet.example.id]
+    }
+    ```
+    </details>
+
+1. Create a file `resources.storage.account.pe.tf`.
+
 1. Create a private endpoint for the storage account:
 
     ```terraform
@@ -107,6 +374,39 @@ Let's create an Azure Storage account using Terraform:
       records             = [azurerm_private_endpoint.example.private_ip_address]
     }
     ```
+
+<details><summary>Show `resources.storage.account.pe.tf` contents</summary>
+    ```console
+    resource "azurerm_private_endpoint" "example" {
+      name                = "example-endpoint"
+      location            = data.azurerm_resource_group.example.location
+      resource_group_name = data.azurerm_resource_group.example.name
+
+      subnet_id = azurerm_subnet.example.id
+
+      private_service_connection {
+        name                           = "example-connection"
+        private_connection_resource_id = azurerm_storage_account.example.id
+        is_manual_connection           = false
+      }
+    }
+
+    resource "azurerm_private_dns_zone" "example" {
+      name                = "privatelink.blob.core.windows.net"
+      resource_group_name = data.azurerm_resource_group.example.name
+    }
+
+    resource "azurerm_private_dns_a_record" "example" {
+      name                = "example-a-record"
+      zone_name           = azurerm_private_dns_zone.example.name
+      resource_group_name = data.azurerm_resource_group.example.name
+      ttl                 = 300
+      records             = [azurerm_private_endpoint.example.private_ip_address]
+    }
+    ```
+    </details>
+
+1. Create a file `resources.storage.account.cmk.tf`.
 
 1. Create a customer managed key for the storage account:
 
@@ -142,42 +442,37 @@ Let's create an Azure Storage account using Terraform:
     }
     ```
 
-    <details><summary>Show `main.tf` contents</summary>
+    <details><summary>Show `resources.storage.account.cmk.tf` contents</summary>
 
     ```console
-    $ cat main.tf
-    provider "azurerm" {
-      features {}
+    resource "azurerm_storage_account_customer_managed_key" "example" {
+      storage_account_id = azurerm_storage_account.example.id
+      key_vault_key_id   = azurerm_key_vault_key.example.id
     }
 
-    data "azurerm_resource_group" "example" {
-      name = "example-rg"
-    }
-
-    resource "random_id" "suffix" {
-      byte_length = 4
-    }
-
-    resource "azurerm_virtual_network" "example" {
-      name                = "example-network"
-      location            = data.azurerm_resource_group.example.location
+    resource "azurerm_key_vault" "example" {
+      name                = "example-kv"
       resource_group_name = data.azurerm_resource_group.example.name
-      address_space       = ["10.0.0.1/16"] # Replace with your address space
+      location            = data.azurerm_resource_group.example.location
+      sku_name            = "standard"
+      tenant_id           = data.azurerm_client_config.current.tenant_id
     }
 
-    resource "azurerm_subnet" "example" {
-      name                 = "internal"
-      resource_group_name  = data.azurerm_resource_group.example.name
-      virtual_network_name = azurerm_virtual_network.example.name
-      address_prefixes     = ["10.0.1.1/26"] # Replace with your address prefix
+    resource "azurerm_key_vault_key" "example" {
+      name         = "example-key"
+      key_vault_id = azurerm_key_vault.example.id
+      key_type     = "RSA"
+      key_size     = 2048
     }
 
-    resource "azurerm_storage_account" "example" {
-      name                     = "examplest${random_id.suffix.hex}"
-      resource_group_name      = data.azurerm_resource_group.example.name
-      location                 = data.azurerm_resource_group.example.location
-      account_tier             = "Standard"
-      account_replication_type = "LRS"
+    resource "azurerm_key_vault_access_policy" "example" {
+      key_vault_id = azurerm_key_vault.example.id
+      tenant_id    = data.azurerm_client_config.current.tenant_id
+
+      certificate_permissions = ["get", "list"]
+      key_permissions         = ["get", "list"]
+      secret_permissions      = ["get", "list"]
+      storage_permissions     = ["get", "list"]
     }
     ```
 
