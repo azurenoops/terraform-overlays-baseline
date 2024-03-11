@@ -86,8 +86,19 @@ nav:
       - GitHub Deployment: deployment/landing-zone-github.md       
       - deployment/landing-zone-cleanup.md
       - deployment/landing-zone-faq.md 
-    - Policy Starter: deployment/policy.md
-    - Sentinel Starter: deployment/sentinel.md
+    - Policy Starter:
+      - Overview: deployment/policy.md
+      - deployment/policy-planning.md
+      - deployment/policy-assignment.md
+      - deployment/policy-remediation.md
+      - Manual Deployment: deployment/policy-manual.md 
+      - GitHub Deployment: deployment/policy-github.md  
+      - deployment/policy-faq.md
+    - Sentinel Starter: 
+      - Overview: deployment/sentinel.md
+      - deployment/sentinel-policy.md
+      - deployment/sentinel-github.md
+      - deployment/sentinel-faq.md
     - Terraform Remote State: deployment/remote-state-storage.md
     - GitHub Actions: deployment/github-actions.md
   - Demos:
