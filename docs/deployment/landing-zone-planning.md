@@ -41,14 +41,14 @@ The following parameters affect the "01 Global Configuration". To override the d
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
 `org_name`       | anoa          | This Prefix will be used on most deployed resources.  10 Characters max.
 `deploy_environment` | dev | This Prefix will be used on most deployed resources.  10 Characters max.
 `environment` | public | The environment to deploy to.
 `default_location` | eastus | The default region to deploy to.
-`enable_resource_locks` | false | Enable locks on resources.  true | false
-`enable_traffic_analytics` | true | Enable NSG Flow Logs.  true | false
+`enable_resource_locks` | false | Enable locks on resources. |  true , false
+`enable_traffic_analytics` | true | Enable NSG Flow Logs. |  true , false
 
 ## Mission Enclave Management Groups
 
@@ -124,17 +124,16 @@ Review and if needed, comment out and modify the variables within the "Landing Z
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`log_analytics_workspace_sku` | "PerGB2018" | The SKU for the Log Analytics Workspace.  PerGB2018 | Standalone | PerNode | Free | CapacityReservation
-`log_analytics_logs_retention_in_days` | 30 | The number of days to retain logs in the Log Analytics Workspace.  30 | 60 | 90 | 120 | 150 | 180 | 365 | 730 | 1827 | 3653
-`enable_sentinel` | true | Enable Azure Sentinel.  true | false
-`enable_azure_activity_log` | true | Enable Azure Activity Log.  true | false
-`enable_vm_insights` | true | Enable Azure Monitor for VMs.  true | false
-`enable_azure_security_center` | true | Enable Azure Security Center.  true | false
-`enable_container_insights` | true | Enable Azure Monitor for Containers.  true | false
-`enable_key_vault_analytics` | true | Enable Azure Monitor for Key Vault.  true | false
-`enable_service_map` | true | Enable Azure Monitor for Service Map.  true | false
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`log_analytics_workspace_sku` | "PerGB2018" | The SKU for the Log Analytics Workspace. | PerGB2018 , Standalone , PerNode , Free , CapacityReservation
+`log_analytics_logs_retention_in_days` | 30 | The number of days to retain logs in the Log Analytics Workspace. | 30 , 60 , 90 , 120 , 150 , 180 , 365 , 730 , 1827 , 3653
+`enable_azure_activity_log` | true | Enable Azure Activity Log.  |  true , false
+`enable_vm_insights` | true | Enable Azure Monitor for VMs.  |  true , false
+`enable_azure_security_center` | true | Enable Azure Security Center.  |  true , false
+`enable_container_insights` | true | Enable Azure Monitor for Containers.  |  true , false
+`enable_key_vault_analytics` | true | Enable Azure Monitor for Key Vault.  |  true , false
+`enable_service_map` | true | Enable Azure Monitor for Service Map.  |  true , false
 
 ### Mission Enclave - Azure Firewall Resource
 
@@ -147,14 +146,14 @@ Review and if needed, comment out and modify the variables within the "Landing Z
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`enable_firewall` | true | Enable Azure Firewall.  true | false
-`enable_forced_tunneling` | true | Enable forced tunneling.  true | false
-`firewall_zones` | array | The availability zones to deploy the firewall to.  1 | 2 | 3
-`firewall_network_rules` | array | The network rules to create in the firewall.
-`firewall_application_rules` | array | The application rules to create in the firewall.
-`firewall_nat_rules` | array | The NAT rules to create in the firewall.
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`enable_firewall` | true | Enable Azure Firewall.  |  true , false
+`enable_forced_tunneling` | true | Enable forced tunneling.  |  true , false
+`firewall_zones` | array | The availability zones to deploy the firewall to. |  1 , 2 , 3
+`firewall_network_rules` | array | The network rules to create in the firewall. | 
+`firewall_application_rules` | array | The application rules to create in the firewall. | 
+`firewall_nat_rules` | array | The NAT rules to create in the firewall. | 
 
 ### Mission Enclave - Bastion/Private DNS Zones
 
@@ -167,12 +166,12 @@ Review and if needed, comment out and modify the variables within the "Landing Z
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`enable_bastion_host` | true | Enable Azure Bastion.  true | false
-`azure_bastion_host_sku` | "Standard" | The SKU for the Azure Bastion Host.  Standard | Premium
-`azure_bastion_subnet_address_prefix` | ["10.8.4.192/27"] | The CIDR Subnet Address Prefix for the Azure Bastion Subnet. It must be in the Hub Virtual Network space. It must be /27. This is the subnet that will be used for the Azure Bastion Host. Optional, if you do not want to deploy Azure Bastion, remove this subnet from the list.
-`hub_private_dns_zones` | array | The private DNS zones to create in the hub virtual network.
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`enable_bastion_host` | true | Enable Azure Bastion.  |  true , false
+`azure_bastion_host_sku` | "Standard" | The SKU for the Azure Bastion Host. |  Standard , Premium
+`azure_bastion_subnet_address_prefix` | ["10.8.4.192/27"] | The CIDR Subnet Address Prefix for the Azure Bastion Subnet. It must be in the Hub Virtual Network space. It must be /27. This is the subnet that will be used for the Azure Bastion Host. Optional, if you do not want to deploy Azure Bastion, remove this subnet from the list. |
+`hub_private_dns_zones` | array | The private DNS zones to create in the hub virtual network. |
 
 ### Mission Enclave - Identity Management Spoke Virtual Network
 
@@ -185,12 +184,12 @@ Review and if needed, comment out and modify the variables within the "Landing Z
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`id_vnet_address_space` | ["10.8.9.0/24"] | The CIDR Virtual Network Address Prefix for the Identity Virtual Network.
-`id_subnets` | array | The subnets to create in the identity virtual network.
-`id_private_dns_zones` | array | The private DNS zones to create in the identity virtual network.
-`enable_forced_tunneling_on_id_route_table` | true | Enable forced tunneling on the route table.  true | false
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`id_vnet_address_space` | ["10.8.9.0/24"] | The CIDR Virtual Network Address Prefix for the Identity Virtual Network.|
+`id_subnets` | array | The subnets to create in the identity virtual network.|
+`id_private_dns_zones` | array | The private DNS zones to create in the identity virtual network.|
+`enable_forced_tunneling_on_id_route_table` | true | Enable forced tunneling on the route table.  |  true , false
 
 ### Mission Enclave - Operations Management Spoke Virtual Network
 
@@ -203,12 +202,12 @@ Review and if needed, comment out and modify the variables within the "Landing Z
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`ops_vnet_address_space` | ["10.8.6.0/24"] | The CIDR Virtual Network Address Prefix for the Operations Virtual Network.
-`ops_subnets` | array | The subnets to create in the operations virtual network.
-`ops_private_dns_zones` | array | The private DNS zones to create in the operations virtual network.
-`enable_forced_tunneling_on_ops_route_table` | true | Enable forced tunneling on the route table.  true | false
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`ops_vnet_address_space` | ["10.8.6.0/24"] | The CIDR Virtual Network Address Prefix for the Operations Virtual Network.|
+`ops_subnets` | array | The subnets to create in the operations virtual network.|
+`ops_private_dns_zones` | array | The private DNS zones to create in the operations virtual network.|
+`enable_forced_tunneling_on_ops_route_table` | true | Enable forced tunneling on the route table.  |  true , false
 
 ### Mission Enclave - DevSecOps Management Spoke Virtual Network
 
@@ -221,13 +220,13 @@ Review and if needed, comment out and modify the variables within the "Landing Z
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`devsecops_vnet_address_space` | ["10.8.7.0/24"] | The CIDR Virtual Network Address Prefix for the DevSecOps Virtual Network.
-`devsecops_subnets` | array | The subnets to create in the devsecops virtual network.
-`devsecops_private_dns_zones` | array | The private DNS zones to create in the devsecops virtual network.
-`enable_forced_tunneling_on_devsecops_route_table` | true | Enable forced tunneling on the route table.  true | false
-`use_remote_spoke_gateway` | false | Use a remote spoke gateway.  true | false
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`devsecops_vnet_address_space` | ["10.8.7.0/24"] | The CIDR Virtual Network Address Prefix for the DevSecOps Virtual Network. |
+`devsecops_subnets` | array | The subnets to create in the devsecops virtual network. |
+`devsecops_private_dns_zones` | array | The private DNS zones to create in the devsecops virtual network. |
+`enable_forced_tunneling_on_devsecops_route_table` | true | Enable forced tunneling on the route table.  |  true , false
+`use_remote_spoke_gateway` | false | Use a remote spoke gateway.  |  true , false
 
 ### Mission Enclave - DevSecOps Management Spoke Components
 
@@ -242,32 +241,32 @@ Review and if needed, comment out and modify the variables within the "Landing Z
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`enable_devsecops_resources` | true | Enable DevSecOps resources.  true | false
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`enable_devsecops_resources` | true | Enable DevSecOps resources.  |  true , false
 
 Example Key Vault Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`enabled_for_deployment` | true | Enable DevSecOps resources for deployment.  true | false
-`enabled_for_disk_encryption` | true | Enable DevSecOps resources for disk encryption.  true | false
-`enabled_for_template_deployment` | true | Enable DevSecOps resources for template deployment.  true | false
-`rbac_authorization_enabled` | true | Enable RBAC authorization.  true | false
-`enable_key_vault_private_endpoint` | true | Enable Key Vault private endpoint.  true | false
-`admin_group_name` | "DevSecOps Admins" | The name of the DevSecOps Admins group for use with Key Vault.
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`enabled_for_deployment` | true | Enable DevSecOps resources for deployment. |  true , false
+`enabled_for_disk_encryption` | true | Enable DevSecOps resources for disk encryption. |  true , false
+`enabled_for_template_deployment` | true | Enable DevSecOps resources for template deployment. |  true , false
+`rbac_authorization_enabled` | true | Enable RBAC authorization. |  true , false
+`enable_key_vault_private_endpoint` | true | Enable Key Vault private endpoint. |  true , false
+`admin_group_name` | "DevSecOps Admins" | The name of the DevSecOps Admins group for use with Key Vault.| 1-64 characters
 
 Example Bastion JumpBox Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`windows_distribution_name` | "windows2019dc" | The Windows distribution name. View Reference: <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/cli-ps-findimage>
-`virtual_machine_size` | "Standard_D2s_v3" | The size of the virtual machine. View Reference: <https://docs.microsoft.com/en-us/azure/virtual-machines/sizes>
-`vm_admin_username` | "anoaadmin" | The username for the administrator account for the Bastion VM.
-`vm_admin_password` | "Password1234!" | The password for the administrator account for the Bastion VM. This is a secret and used with GitHub Actions. If used for testing, it should be changed after testing.
-`nsg_inbound_rules` | array | The inbound rules to create in the NSG for the Bastion VM.
-`data_disks` | array | The data disks to create for the Bastion VM.
-`deploy_log_analytics_agent` | true | Deploy the Log Analytics agent for the Bastion VM.
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`windows_distribution_name` | "windows2019dc" | The Windows distribution name. View Reference: <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/cli-ps-findimage> | "windows2019dc" , "windows2019datacenter"
+`virtual_machine_size` | "Standard_D2s_v3" | The size of the virtual machine. View Reference: <https://docs.microsoft.com/en-us/azure/virtual-machines/sizes> | "Standard_D2s_v3" , "Standard_D4s_v3"
+`vm_admin_username` | "anoaadmin" | The username for the administrator account for the Bastion VM. | 1-20 characters
+`vm_admin_password` | "Password1234!" | The password for the administrator account for the Bastion VM. This is a secret and used with GitHub Actions. If used for testing, it should be changed after testing.| 12-123 characters
+`nsg_inbound_rules` | array | The inbound rules to create in the NSG for the Bastion VM. | "3389" , "5986"
+`data_disks` | array | The data disks to create for the Bastion VM. | "P30" , "P40" , "P50"
+`deploy_log_analytics_agent` | true | Deploy the Log Analytics agent for the Bastion VM. | true , false
 
 ### Mission Enclave - Azure Service Health Configuration
 
@@ -280,7 +279,7 @@ Review and if needed, comment out and modify the variables within the "Landing Z
 
 Example Configuration:
 
-Parameter name | Default Value | Description
--------------- | ------------- | -----------
-`enable_service_health_monitoring` | true | Enable Service Health Configuration.
-`action_group_short_name` | "anoa" | The short name for the action group.  1-12 characters
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`enable_service_health_monitoring` | true | Enable Service Health Configuration. | true | false
+`action_group_short_name` | "anoa" | The short name for the action group. | 1-12 characters
