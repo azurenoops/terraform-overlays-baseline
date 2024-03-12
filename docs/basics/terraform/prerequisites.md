@@ -31,4 +31,11 @@ Using the Azure CLI, create a resource group in Azure to contain the resources c
     eastus       example-rg
     ```
 
+1. Clone the repository:
+
+    ```console
+    $ git clone 
+
+    ```
+
 Now we're ready to start learning about Terraform, starting with the basic syntax.

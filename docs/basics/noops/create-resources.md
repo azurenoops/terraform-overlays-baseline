@@ -42,24 +42,6 @@ Let's create an Azure Storage account using Terraform:
     ```
     </details>
 
-1. Create a file `data.tf`.
-
-1. Read the Azure resource group you created into Terraform by using a data source:
-
-    ```terraform
-    data "azurerm_resource_group" "example" {
-      name = "example-rg"
-    }
-    ```
-
-<details><summary>Show `data.tf` contents</summary>
-    ```console
-    data "azurerm_resource_group" "example" {
-      name = "example-rg"
-    }
-    ```
-    </details>
-
 1. Create a file `variables.global.tf`.
 
 1. Define the global variables:
@@ -270,138 +252,107 @@ Let's create an Azure Storage account using Terraform:
     ```
     </details>
 
-1. Create a file `resources.storage.account.tf`.
+1. Create a file `modules.storage.account.tf`.
 
-1. Create a random suffix for resource names using the built-in random provider, and an Azure Storage account in the resource group:
+1. Create an Azure Storage account with a container and network rules in Azure NoOps:
 
     ```terraform
-    resource "random_id" "suffix" {
-      byte_length = 4
-    }
+    module "mod_storage_account" "example" {
+      source="azurenoops/terraform-azurerm-overlays-storage-account/azurerm"
+      version="0.1.0"
 
-    resource "azurerm_storage_account" "example" {
-      name                     = "examplest${random_id.suffix.hex}"
-      resource_group_name      = data.azurerm_resource_group.example.name
-      location                 = data.azurerm_resource_group.example.location
+      # Resource Group, location, VNet and Subnet details
+      create_storage_resource_group = true
+      location                      = var.location
+      deploy_environment            = var.deploy_environment
+      org_name                      = var.org_name
+      environment                   = var.environment
+      workload_name                 = var.workload_name
+
+      # Storage Account details
       account_tier             = "Standard"
       account_replication_type = "LRS"
+
+      # Storage Container details
+      containers = [ 
+        {
+          name = "container1"
+          public_access = "private"
+        },
+        {
+          name = "container2"
+          public_access = "private"
+        }
+      ]
+
+      # Network rules 
+      network_rules = {
+        default_firewall_action = "Deny"
+        bypass = "AzureServices"
+        subnet_ids = [azurerm_subnet.example.id]
+      }
+
+      # To enable advanced threat protection set argument to `true`
+      enable_advanced_threat_protection = true
+      
+      # Enable private endpoint for storage account (Optional)
+      enable_blob_private_endpoint  = true
+      virtual_network_name         = azurerm_virtual_network.example.name
+      existing_private_subnet_name = azurerm_subnet.example.name
+
+      # Locks
+      enable_resource_locks = false      
     }
     ```
 
-1. Create a storage container in the storage account:
-
-    ```terraform
-    resource "azurerm_storage_container" "example" {
-      name                  = "example-container"
-      storage_account_name  = azurerm_storage_account.example.name
-      container_access_type = "private"
-    }
-    ```
-
-1. Create network rules for the storage account:
-
-    ```terraform
-    resource "azurerm_storage_account_network_rules" "example" {
-      resource_group_name  = data.azurerm_resource_group.example.name
-      storage_account_name = azurerm_storage_account.example.name
-
-      default_action             = "Deny"
-      bypass                     = ["AzureServices"]
-      virtual_network_subnet_ids = [azurerm_subnet.example.id]
-    }
-    ```
-
-<details><summary>Show `resources.storage.account.tf` contents</summary>
+<details><summary>Show `modules.storage.account.tf` contents</summary>
     ```console
-    resource "random_id" "suffix" {
-      byte_length = 4
-    }
 
-    resource "azurerm_storage_account" "example" {
-      name                     = "examplest${random_id.suffix.hex}"
-      resource_group_name      = data.azurerm_resource_group.example.name
-      location                 = data.azurerm_resource_group.example.location
+    module "mod_storage_account" "example" {
+      source="azurenoops/terraform-azurerm-overlays-storage-account/azurerm"
+      version="0.1.0"
+
+      # Resource Group, location, VNet and Subnet details
+      create_storage_resource_group = true
+      location                      = var.location
+      deploy_environment            = var.deploy_environment
+      org_name                      = var.org_name
+      environment                   = var.environment
+      workload_name                 = var.workload_name
+
+      # Storage Account details
       account_tier             = "Standard"
       account_replication_type = "LRS"
-    }
 
-    resource "azurerm_storage_container" "example" {
-      name                  = "example-container"
-      storage_account_name  = azurerm_storage_account.example.name
-      container_access_type = "private"
-    }
+      # Storage Container details
+      containers = [ 
+        {
+          name = "container1"
+          public_access = "private"
+        },
+        {
+          name = "container2"
+          public_access = "private"
+        }
+      ]
 
-    resource "azurerm_storage_account_network_rules" "example" {
-      resource_group_name  = data.azurerm_resource_group.example.name
-      storage_account_name = azurerm_storage_account.example.name
-
-      default_action             = "Deny"
-      bypass                     = ["AzureServices"]
-      virtual_network_subnet_ids = [azurerm_subnet.example.id]
-    }
-    ```
-    </details>
-
-1. Create a file `resources.storage.account.pe.tf`.
-
-1. Create a private endpoint for the storage account:
-
-    ```terraform
-    resource "azurerm_private_endpoint" "example" {
-      name                = "example-endpoint"
-      location            = data.azurerm_resource_group.example.location
-      resource_group_name = data.azurerm_resource_group.example.name
-
-      subnet_id = azurerm_subnet.example.id
-
-      private_service_connection {
-        name                           = "example-connection"
-        private_connection_resource_id = azurerm_storage_account.example.id
-        is_manual_connection           = false
+      # Network rules 
+      network_rules = {
+        default_firewall_action = "Deny"
+        bypass = "AzureServices"
+        subnet_ids = [azurerm_subnet.example.id]
       }
-    }
 
-    resource "azurerm_private_dns_zone" "example" {
-      name                = "privatelink.blob.core.windows.net"
-      resource_group_name = data.azurerm_resource_group.example.name
-    }
+      # To enable advanced threat protection set argument to `true`
+      enable_advanced_threat_protection = true
+      
+      # Enable private endpoint for storage account (Optional)
+      enable_blob_private_endpoint  = true
+      virtual_network_name         = azurerm_virtual_network.example.name
+      existing_private_subnet_name = azurerm_subnet.example.name
 
-    resource "azurerm_private_dns_a_record" "example" {
-      name                = "example-a-record"
-      zone_name           = azurerm_private_dns_zone.example.name
-      resource_group_name = data.azurerm_resource_group.example.name
-      ttl                 = 300
-      records             = [azurerm_private_endpoint.example.private_ip_address]
-    }
-    ```
-
-<details><summary>Show `resources.storage.account.pe.tf` contents</summary>
-    ```console
-    resource "azurerm_private_endpoint" "example" {
-      name                = "example-endpoint"
-      location            = data.azurerm_resource_group.example.location
-      resource_group_name = data.azurerm_resource_group.example.name
-
-      subnet_id = azurerm_subnet.example.id
-
-      private_service_connection {
-        name                           = "example-connection"
-        private_connection_resource_id = azurerm_storage_account.example.id
-        is_manual_connection           = false
-      }
-    }
-
-    resource "azurerm_private_dns_zone" "example" {
-      name                = "privatelink.blob.core.windows.net"
-      resource_group_name = data.azurerm_resource_group.example.name
-    }
-
-    resource "azurerm_private_dns_a_record" "example" {
-      name                = "example-a-record"
-      zone_name           = azurerm_private_dns_zone.example.name
-      resource_group_name = data.azurerm_resource_group.example.name
-      ttl                 = 300
-      records             = [azurerm_private_endpoint.example.private_ip_address]
+      # Locks
+      enable_resource_locks = false
     }
     ```
     </details>

@@ -53,23 +53,23 @@ nav:
     - Security: best-practices/security.md    
   - Basics:
     - Terraform:
-      - terraform/index.md
-      - terraform/prerequisites.md
-      - terraform/use-case.md
-      - terraform/syntax.md      
-      - terraform/create-resources.md
-      - terraform/update-resources.md
-      - terraform/destroy-resources.md
-      - terraform/summary.md
+      - basics/terraform/index.md
+      - basics/terraform/prerequisites.md
+      - basics/terraform/use-case.md
+      - basics/terraform/syntax.md      
+      - basics/terraform/create-resources.md
+      - basics/terraform/update-resources.md
+      - basics/terraform/destroy-resources.md
+      - basics/terraform/summary.md
     - Azure NoOps:
-      - noops/index.md
-      - noops/prerequisites.md
-      - noops/use-case.md
-      - noops/syntax.md
-      - noops/create-resources.md
-      - noops/update-resources.md
-      - noops/destroy-resources.md
-      - noops/summary.md
+      - basics/noops/index.md
+      - basics/noops/prerequisites.md
+      - basics/noops/use-case.md
+      - basics/noops/syntax.md
+      - basics/noops/create-resources.md
+      - basics/noops/update-resources.md
+      - basics/noops/destroy-resources.md
+      - basics/noops/summary.md
   - Reusable modules:
     - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
   - Developing Modules:

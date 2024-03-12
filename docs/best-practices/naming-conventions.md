@@ -37,6 +37,8 @@
 
 4. Use `-` inside arguments values and in places where value will be exposed to a human (eg, inside DNS name of RDS instance).
 
+4. Use `${}` for [interpolation](https://en.wikipedia.org/wiki/String_interpolation), even if it is not necessary. It makes the code more readable and maintainable.
+
 5. Include argument `count` / `for_each` inside resource or data source block as the first argument at the top and separate by newline after it.
 
 6. Include argument `tags,` if supported by resource, as the last real argument, following by `depends_on` and `lifecycle`, if necessary. All of these should be separated by a single empty line.

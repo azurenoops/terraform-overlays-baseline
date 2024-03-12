@@ -4,23 +4,23 @@ The official Terraform documentation describes all aspects of [terraform configu
 
 ## Resource
 
-Resource is azurerm_storage, azurerm_virtual_machine, etc. A resource belongs to a provider, accepts arguments, outputs attributes, and has a lifecycle. A resource can be created, retrieved, updated, and deleted.
+Resource is azurerm_storage_account, azurerm_virtual_machine, etc. A resource belongs to a provider such as [AzureRM](https://registry.terraform.io/providers/hashicorp/azurerm/latest), accepts arguments, outputs attributes, and has a lifecycle. A resource can be created, retrieved, updated, and deleted.
 
 ## Resource module
 
-Resource module is a collection of connected resources which together perform the common action (for e.g., [Azure NoOps Storage Account Terraform overlays module](https://github.com/azurenoops/terraform-azurerm-overlays-storage-account) creates Storage Account, blobs, tables, etc). It depends on provider configuration, which can be defined in it, or in higher-level structures (e.g., in infrastructure module).
+Resource module is a collection of connected resources which together perform the common action (For example, [Azure NoOps Storage Account Terraform Overlays Module](https://github.com/azurenoops/terraform-azurerm-overlays-storage-account) creates Storage Account, blobs, tables, etc). It depends on provider configuration, which can be defined in it, or in higher-level structures (e.g., in infrastructure module).
 
 ## Infrastructure module
 
 An infrastructure module is a collection of resource modules, which can be logically not connected, but in the current situation/project/setup serves the same purpose. It defines the configuration for providers, which is passed to the downstream resource modules and to resources. It is normally limited to work in one entity per logical separator (e.g., Azrue Region, Key Vault).
 
-For example, terraform-azurerm-overlays-management-hub module uses resource modules like terraform-azurerm-overlays-storage-account and terraform-azurerm-overlays-dns to manage the infrastructure required for running Managment Hub on Azure NoOps Mission Enclave.
+For example, [terraform-azurerm-overlays-management-hub](https://github.com/azurenoops/terraform-azurerm-overlays-management-hub) module includes resource modules like [terraform-azurerm-overlays-storage-account](https://github.com/azurenoops/terraform-azurerm-overlays-storage-account) and [terraform-azurerm-overlays-management-logging](https://github.com/azurenoops/terraform-azurerm-overlays-management-logging) to manage the infrastructure required for running [Landing Zone Management Hub](https://github.com/azurenoops/terraform-azurerm-overlays-management-hub) on Azure NoOps Mission Enclave.
 
 ## Composition
 
 Composition is a collection of infrastructure modules, which can span across several logically separated areas (e.g.., Azure Regions, several Azure accounts). Composition is used to describe the complete infrastructure required for the whole organization or project.
 
-A composition consists of infrastructure modules, which consist of resources modules, which implement individual resources.
+A composition consists of infrastructure modules, which consist of resources modules, which implement individual resources. For example, the [Mission Enclave Landing Zone Starter](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter) is a composition that consists of the [Landing Zone Management Hub](https://github.com/azurenoops/terraform-azurerm-overlays-management-hub) and [Landing Zone Management Spoke](https://github.com/azurenoops/terraform-azurerm-overlays-management-spoke) infrastructure modules.
 
 ## Data source
 
