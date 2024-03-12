@@ -64,7 +64,7 @@ composition-1 (Mission Enclave Landing Zone Starter) {
     resource-module-2 (terraform-azurerm-overlays-logging) (Log Analytics, Storage Account, etc) {
       data-source-3 => d3
       resource-3 (azurerm_log_analytics_workspace, d3)
-      resource-4 (terraform-azurerm-overlays-storage-account)
+      resource-module-4 (terraform-azurerm-overlays-storage-account)
     }
 
     resource-module-3 (terraform-azurerm-overlays-key-vault) (Key Vault, access policy, etc) {
