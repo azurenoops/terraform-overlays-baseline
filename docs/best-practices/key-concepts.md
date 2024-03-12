@@ -38,7 +38,7 @@ Infrastructure modules and compositions should persist their [Terraform state](h
 
 ## Provider, provisioner, etc
 
-Providers, provisioners, and a few other terms are described very well in the official documentation and there is no point to repeat it here.
+Providers, provisioners, and a few other terms are described very well in the official documentation. Azure NoOPs uses the [AzureRM](https://registry.terraform.io/providers/hashicorp/azurerm/latest).
 
 ## Putting it all together
 
@@ -58,19 +58,19 @@ composition-1 (Mission Enclave Landing Zone Starter) {
     resource-module-1 (terraform-azurerm-overlays-storage-account) (Storage Account, blobs, tables, etc) {
       data-source-2 => d2
       resource-1 (azurerm_storage_account, d2)
-      resource-2 (d2)
+      resource-2 (azurerm_storage_container, d2)
     }
 
-    resource-module-2 (terraform-azurerm-overlays-DNS) (DNS zone, records, etc) {
+    resource-module-2 (terraform-azurerm-overlays-logging) (Log Analytics, Storage Account, etc) {
       data-source-3 => d3
-      resource-3 (d2, d3)
-      resource-4 (d3)
+      resource-3 (azurerm_log_analytics_workspace, d3)
+      resource-4 (terraform-azurerm-overlays-storage-account)
     }
 
     resource-module-3 (terraform-azurerm-overlays-key-vault) (Key Vault, access policy, etc) {
       data-source-4 => d34
-      resource-5 (d3, d4)
-      resource-6 (d4)
+      resource-5 (azurerm_key_vault, d4)
+      resource-6 (azurerm_key_vault_access_policy, d4)
     }
   }
 }
