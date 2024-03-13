@@ -523,75 +523,291 @@ Let's create an Azure Storage account using Terraform:
 
     Terraform will perform the following actions:
 
+      # azurerm_key_vault.example will be created
+      + resource "azurerm_key_vault" "example" {
+          + access_policy                 = (known after apply)
+          + id                            = (known after apply)
+          + location                      = "eastus"
+          + name                          = "example-kv"
+          + public_network_access_enabled = true
+          + resource_group_name           = "example-rg"
+          + sku_name                      = "premium"
+          + soft_delete_retention_days    = 90
+          + tenant_id                     = "ecc11461-8e07-4a0d-a244-3e7db5ccc4d6"
+          + vault_uri                     = (known after apply)
+        }
+
+      # azurerm_key_vault_access_policy.example will be created
+      + resource "azurerm_key_vault_access_policy" "example" {
+          + id                 = (known after apply)
+          + key_permissions    = [
+              + "Create",
+              + "Delete",
+              + "Get",
+              + "Purge",
+              + "Recover",
+              + "Update",
+              + "GetRotationPolicy",
+              + "SetRotationPolicy",
+            ]
+          + key_vault_id       = (known after apply)
+          + object_id          = "6a60538e-0c82-4ed2-8aa0-1f158323cd87"
+          + secret_permissions = [
+              + "Set",
+            ]
+          + tenant_id          = "ecc11461-8e07-4a0d-a244-3e7db5ccc4d6"
+        }
+
+      # azurerm_key_vault_key.example will be created
+      + resource "azurerm_key_vault_key" "example" {
+          + curve                   = (known after apply)
+          + e                       = (known after apply)
+          + id                      = (known after apply)
+          + key_opts                = [
+              + "decrypt",
+              + "encrypt",
+              + "sign",
+              + "unwrapKey",
+              + "verify",
+              + "wrapKey",
+            ]
+          + key_size                = 2048
+          + key_type                = "RSA"
+          + key_vault_id            = (known after apply)
+          + n                       = (known after apply)
+          + name                    = "example-key"
+          + public_key_openssh      = (known after apply)
+          + public_key_pem          = (known after apply)
+          + resource_id             = (known after apply)
+          + resource_versionless_id = (known after apply)
+          + version                 = (known after apply)
+          + versionless_id          = (known after apply)
+          + x                       = (known after apply)
+          + y                       = (known after apply)
+
+          + rotation_policy {
+              + expire_after         = "P90D"
+              + notify_before_expiry = "P29D"
+
+              + automatic {
+                  + time_before_expiry = "P30D"
+                }
+            }
+        }
+
+      # azurerm_private_dns_a_record.example will be created
+      + resource "azurerm_private_dns_a_record" "example" {
+          + fqdn                = (known after apply)
+          + id                  = (known after apply)
+          + name                = "example-a-record"
+          + records             = (known after apply)
+          + resource_group_name = "example-rg"
+          + ttl                 = 300
+          + zone_name           = "privatelink.blob.core.windows.net"
+        }
+
+      # azurerm_private_dns_zone.example will be created
+      + resource "azurerm_private_dns_zone" "example" {
+          + id                                                    = (known after apply)
+          + max_number_of_record_sets                             = (known after apply)
+          + max_number_of_virtual_network_links                   = (known after apply)
+          + max_number_of_virtual_network_links_with_registration = (known after apply)
+          + name                                                  = "privatelink.blob.core.windows.net"
+          + number_of_record_sets                                 = (known after apply)
+          + resource_group_name                                   = "example-rg"
+        }
+
+      # azurerm_private_endpoint.example will be created
+      + resource "azurerm_private_endpoint" "example" {
+          + custom_dns_configs       = (known after apply)
+          + id                       = (known after apply)
+          + location                 = "eastus"
+          + name                     = "example-endpoint"
+          + network_interface        = (known after apply)
+          + private_dns_zone_configs = (known after apply)
+          + resource_group_name      = "example-rg"
+          + subnet_id                = (known after apply)
+
+          + private_service_connection {
+              + is_manual_connection           = false
+              + name                           = "example-connection"
+              + private_connection_resource_id = (known after apply)
+              + private_ip_address             = (known after apply)
+            }
+        }
+
       # azurerm_storage_account.example will be created
       + resource "azurerm_storage_account" "example" {
-          + access_tier                       = (known after apply)
-          + account_kind                      = "StorageV2"
-          + account_replication_type          = "LRS"
-          + account_tier                      = "Standard"
-          + allow_nested_items_to_be_public   = true
-          + cross_tenant_replication_enabled  = true
-          + default_to_oauth_authentication   = false
-          + enable_https_traffic_only         = true
-          + id                                = (known after apply)
-          + infrastructure_encryption_enabled = false
-          + is_hns_enabled                    = false
-          + large_file_share_enabled          = (known after apply)
-          + location                          = "northeurope"
-          + min_tls_version                   = "TLS1_2"
-          + name                              = (known after apply)
-          + nfsv3_enabled                     = false
-          + primary_access_key                = (sensitive value)
-          + primary_blob_connection_string    = (sensitive value)
-          + primary_blob_endpoint             = (known after apply)
-          + primary_blob_host                 = (known after apply)
-          + primary_connection_string         = (sensitive value)
-          + primary_dfs_endpoint              = (known after apply)
-          + primary_dfs_host                  = (known after apply)
-          + primary_file_endpoint             = (known after apply)
-          + primary_file_host                 = (known after apply)
-          + primary_location                  = (known after apply)
-          + primary_queue_endpoint            = (known after apply)
-          + primary_queue_host                = (known after apply)
-          + primary_table_endpoint            = (known after apply)
-          + primary_table_host                = (known after apply)
-          + primary_web_endpoint              = (known after apply)
-          + primary_web_host                  = (known after apply)
-          + public_network_access_enabled     = true
-          + queue_encryption_key_type         = "Service"
-          + resource_group_name               = "example-rg"
-          + secondary_access_key              = (sensitive value)
-          + secondary_blob_connection_string  = (sensitive value)
-          + secondary_blob_endpoint           = (known after apply)
-          + secondary_blob_host               = (known after apply)
-          + secondary_connection_string       = (sensitive value)
-          + secondary_dfs_endpoint            = (known after apply)
-          + secondary_dfs_host                = (known after apply)
-          + secondary_file_endpoint           = (known after apply)
-          + secondary_file_host               = (known after apply)
-          + secondary_location                = (known after apply)
-          + secondary_queue_endpoint          = (known after apply)
-          + secondary_queue_host              = (known after apply)
-          + secondary_table_endpoint          = (known after apply)
-          + secondary_table_host              = (known after apply)
-          + secondary_web_endpoint            = (known after apply)
-          + secondary_web_host                = (known after apply)
-          + sftp_enabled                      = false
-          + shared_access_key_enabled         = true
-          + table_encryption_key_type         = "Service"
+          + access_tier                        = (known after apply)
+          + account_kind                       = "StorageV2"
+          + account_replication_type           = "LRS"
+          + account_tier                       = "Standard"
+          + allow_nested_items_to_be_public    = true
+          + cross_tenant_replication_enabled   = true
+          + default_to_oauth_authentication    = false
+          + enable_https_traffic_only          = true
+          + id                                 = (known after apply)
+          + infrastructure_encryption_enabled  = false
+          + is_hns_enabled                     = false
+          + large_file_share_enabled           = (known after apply)
+          + local_user_enabled                 = true
+          + location                           = "eastus"
+          + min_tls_version                    = "TLS1_2"
+          + name                               = (known after apply)
+          + nfsv3_enabled                      = false
+          + primary_access_key                 = (sensitive value)
+          + primary_blob_connection_string     = (sensitive value)
+          + primary_blob_endpoint              = (known after apply)
+          + primary_blob_host                  = (known after apply)
+          + primary_blob_internet_endpoint     = (known after apply)
+          + primary_blob_internet_host         = (known after apply)
+          + primary_blob_microsoft_endpoint    = (known after apply)
+          + primary_blob_microsoft_host        = (known after apply)
+          + primary_connection_string          = (sensitive value)
+          + primary_dfs_endpoint               = (known after apply)
+          + primary_dfs_host                   = (known after apply)
+          + primary_dfs_internet_endpoint      = (known after apply)
+          + primary_dfs_internet_host          = (known after apply)
+          + primary_dfs_microsoft_endpoint     = (known after apply)
+          + primary_dfs_microsoft_host         = (known after apply)
+          + primary_file_endpoint              = (known after apply)
+          + primary_file_host                  = (known after apply)
+          + primary_file_internet_endpoint     = (known after apply)
+          + primary_file_internet_host         = (known after apply)
+          + primary_file_microsoft_endpoint    = (known after apply)
+          + primary_file_microsoft_host        = (known after apply)
+          + primary_location                   = (known after apply)
+          + primary_queue_endpoint             = (known after apply)
+          + primary_queue_host                 = (known after apply)
+          + primary_queue_microsoft_endpoint   = (known after apply)
+          + primary_queue_microsoft_host       = (known after apply)
+          + primary_table_endpoint             = (known after apply)
+          + primary_table_host                 = (known after apply)
+          + primary_table_microsoft_endpoint   = (known after apply)
+          + primary_table_microsoft_host       = (known after apply)
+          + primary_web_endpoint               = (known after apply)
+          + primary_web_host                   = (known after apply)
+          + primary_web_internet_endpoint      = (known after apply)
+          + primary_web_internet_host          = (known after apply)
+          + primary_web_microsoft_endpoint     = (known after apply)
+          + primary_web_microsoft_host         = (known after apply)
+          + public_network_access_enabled      = true
+          + queue_encryption_key_type          = "Service"
+          + resource_group_name                = "example-rg"
+          + secondary_access_key               = (sensitive value)
+          + secondary_blob_connection_string   = (sensitive value)
+          + secondary_blob_endpoint            = (known after apply)
+          + secondary_blob_host                = (known after apply)
+          + secondary_blob_internet_endpoint   = (known after apply)
+          + secondary_blob_internet_host       = (known after apply)
+          + secondary_blob_microsoft_endpoint  = (known after apply)
+          + secondary_blob_microsoft_host      = (known after apply)
+          + secondary_connection_string        = (sensitive value)
+          + secondary_dfs_endpoint             = (known after apply)
+          + secondary_dfs_host                 = (known after apply)
+          + secondary_dfs_internet_endpoint    = (known after apply)
+          + secondary_dfs_internet_host        = (known after apply)
+          + secondary_dfs_microsoft_endpoint   = (known after apply)
+          + secondary_dfs_microsoft_host       = (known after apply)
+          + secondary_file_endpoint            = (known after apply)
+          + secondary_file_host                = (known after apply)
+          + secondary_file_internet_endpoint   = (known after apply)
+          + secondary_file_internet_host       = (known after apply)
+          + secondary_file_microsoft_endpoint  = (known after apply)
+          + secondary_file_microsoft_host      = (known after apply)
+          + secondary_location                 = (known after apply)
+          + secondary_queue_endpoint           = (known after apply)
+          + secondary_queue_host               = (known after apply)
+          + secondary_queue_microsoft_endpoint = (known after apply)
+          + secondary_queue_microsoft_host     = (known after apply)
+          + secondary_table_endpoint           = (known after apply)
+          + secondary_table_host               = (known after apply)
+          + secondary_table_microsoft_endpoint = (known after apply)
+          + secondary_table_microsoft_host     = (known after apply)
+          + secondary_web_endpoint             = (known after apply)
+          + secondary_web_host                 = (known after apply)
+          + secondary_web_internet_endpoint    = (known after apply)
+          + secondary_web_internet_host        = (known after apply)
+          + secondary_web_microsoft_endpoint   = (known after apply)
+          + secondary_web_microsoft_host       = (known after apply)
+          + sftp_enabled                       = false
+          + shared_access_key_enabled          = true
+          + table_encryption_key_type          = "Service"
+        }
+
+      # azurerm_storage_account_customer_managed_key.example will be created
+      + resource "azurerm_storage_account_customer_managed_key" "example" {
+          + id                 = (known after apply)
+          + key_name           = "example-key"
+          + key_vault_id       = (known after apply)
+          + key_vault_uri      = (known after apply)
+          + storage_account_id = (known after apply)
+        }
+
+      # azurerm_storage_account_network_rules.example will be created
+      + resource "azurerm_storage_account_network_rules" "example" {
+          + bypass                     = [
+              + "AzureServices",
+            ]
+          + default_action             = "Deny"
+          + id                         = (known after apply)
+          + ip_rules                   = (known after apply)
+          + storage_account_id         = (known after apply)
+          + virtual_network_subnet_ids = (known after apply)
+        }
+
+      # azurerm_storage_container.example will be created
+      + resource "azurerm_storage_container" "example" {
+          + container_access_type   = "private"
+          + has_immutability_policy = (known after apply)
+          + has_legal_hold          = (known after apply)
+          + id                      = (known after apply)
+          + metadata                = (known after apply)
+          + name                    = "example-container"
+          + resource_manager_id     = (known after apply)
+          + storage_account_name    = (known after apply)
+        }
+
+      # azurerm_subnet.example will be created
+      + resource "azurerm_subnet" "example" {
+          + address_prefixes                               = [
+              + "10.0.1.1/26",
+            ]
+          + enforce_private_link_endpoint_network_policies = (known after apply)
+          + enforce_private_link_service_network_policies  = (known after apply)
+          + id                                             = (known after apply)
+          + name                                           = "internal"
+          + private_endpoint_network_policies_enabled      = (known after apply)
+          + private_link_service_network_policies_enabled  = (known after apply)
+          + resource_group_name                            = "example-rg"
+          + virtual_network_name                           = "example-network"
+        }
+
+      # azurerm_virtual_network.example will be created
+      + resource "azurerm_virtual_network" "example" {
+          + address_space       = [
+              + "10.0.0.1/16",
+            ]
+          + dns_servers         = (known after apply)
+          + guid                = (known after apply)
+          + id                  = (known after apply)
+          + location            = "eastus"
+          + name                = "example-network"
+          + resource_group_name = "example-rg"
+          + subnet              = (known after apply)
         }
 
       # random_id.suffix will be created
       + resource "random_id" "suffix" {
           + b64_std     = (known after apply)
           + b64_url     = (known after apply)
-          + byte_length = 8
+          + byte_length = 4
           + dec         = (known after apply)
           + hex         = (known after apply)
           + id          = (known after apply)
         }
 
-    Plan: 2 to add, 0 to change, 0 to destroy.
+    Plan: 13 to add, 0 to change, 0 to destroy.
     ```
 
     </details>
