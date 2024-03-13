@@ -14,6 +14,8 @@ Resource module is a collection of connected resources which together perform th
 
 An infrastructure module is a collection of resources and/or resource modules, which can be logically connected, but in the current situation/project/setup they may not all connect. It defines the configuration for providers, which is passed to the downstream resource modules and to resources. It is normally limited to work in one entity per logical separator (e.g., Azrue Region, Key Vault).
 
+Infrastructure module can include multiple overlay modules, provider resources, and data sources. We don't want to confuse the term "`overlay`" with the term "Infrastructure module". An infrastructure module can include multiple overlay modules, which in turn can be called a `overlay`. Basically anything that can be used to create a resource or a resource module can be included in an `overlay`.
+
 For example, [terraform-azurerm-overlays-management-hub](https://github.com/azurenoops/terraform-azurerm-overlays-management-hub) module includes provider resources like [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network), [azurerm_subnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet), and includes resource modules [terraform-azurerm-overlays-storage-account](https://github.com/azurenoops/terraform-azurerm-overlays-storage-account),[terraform-azurerm-overlays-management-logging](https://github.com/azurenoops/terraform-azurerm-overlays-management-logging) to manage the infrastructure required for running [Landing Zone Management Hub](https://github.com/azurenoops/terraform-azurerm-overlays-management-hub) on Azure NoOps Mission Enclave.
 
 ## Composition
