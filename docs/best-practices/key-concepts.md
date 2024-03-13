@@ -20,7 +20,7 @@ For example, [terraform-azurerm-overlays-management-hub](https://github.com/azur
 
 ## Composition
 
-Composition is a collection of infrastructure modules, which can span across several logically separated areas (e.g.., Azure Regions, several Azure accounts). Composition is used to describe the complete infrastructure required for the whole organization or project.
+Composition is a collection of infrastructure modules(`overlays`), which can span across several logically separated areas (e.g.., Azure Regions, several Azure accounts). Composition is used to describe the complete infrastructure required for the whole organization or project.
 
 A composition consists of infrastructure modules, which consist of resources modules, which implement individual resources. For example, the [Mission Enclave Landing Zone Starter](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter) is a composition that consists of the [Landing Zone Management Hub](https://github.com/azurenoops/terraform-azurerm-overlays-management-hub) and [Landing Zone Management Spoke](https://github.com/azurenoops/terraform-azurerm-overlays-management-spoke) infrastructure modules.
 
