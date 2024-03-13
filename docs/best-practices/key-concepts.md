@@ -8,7 +8,7 @@ Resource is azurerm_storage_account, azurerm_virtual_machine, etc. A resource be
 
 ## Resource module (aka overlay module)
 
-Resource module is a collection of connected resources which together perform the common action (For example, [Azure NoOps Storage Account Terraform Overlays Module](https://github.com/azurenoops/terraform-azurerm-overlays-storage-account) creates Storage Account, blobs, tables, etc). It depends on provider configuration, which can be defined in it, or in higher-level structures (e.g., in infrastructure module).
+Resource module which is commonly called a `overlay` in the Azure NoOps is a collection of connected resources which together perform the common action (For example, [Azure NoOps Storage Account Terraform Overlays Module](https://github.com/azurenoops/terraform-azurerm-overlays-storage-account) creates Storage Account, blobs, tables, etc). It depends on provider configuration, which can be defined in it, or in higher-level structures (e.g., in infrastructure module).
 
 ## Infrastructure module
 
