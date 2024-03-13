@@ -12,7 +12,7 @@ Resource module which is commonly called a `overlay` in the Azure NoOps is a col
 
 ## Infrastructure module
 
-An infrastructure module is a collection of resources and/or resource modules, which can be logically connected, but in the current situation/project/setup they may not all connect. It defines the configuration for providers, which is passed to the downstream resource modules and to resources. It is normally limited to work in one entity per logical separator (e.g., Azrue Region, Key Vault).
+An infrastructure module is a collection of resources and/or resource modules, which can be logically connected. It defines the configuration for providers, which is passed to the downstream resource modules and to resources. It is normally limited to work in one entity per logical separator (e.g., Azrue Region, Key Vault).
 
 Infrastructure module can include multiple overlay modules, provider resources, and data sources. We don't want to confuse the term "`overlay`" with the term "Infrastructure module". An infrastructure module can include multiple overlay modules, which in turn can be called a `overlay`. Basically anything that can be used to create a resource or a resource module can be included in an `overlay`.
 
