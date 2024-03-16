@@ -1,4 +1,4 @@
-# Mission Enclave Landing Zone Cleanup
+# Cleanup
 
 Remember to destroy resources that are not in use. If you want to delete an Mission Enclave Landing Zone Starter deployment you can use [`terraform destroy`](https://www.terraform.io/docs/cli/commands/destroy.html). If you have deployed more than one Terraform template, e.g., if you have deployed `landing zone` and then `addon-workload`, run the `terraform destroy` commands in the reverse order that you applied them.
 

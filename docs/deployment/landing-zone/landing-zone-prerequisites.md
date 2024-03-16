@@ -1,4 +1,4 @@
-# Mission Enclave Landing Zone Starter Prerequisites
+# Prerequisites
 
 Mission Enclave Landing Zone Starter can bootstrap an entire Azure tenant without any infrastructure dependencies, and the user must first have Owner permission on the tenant *root* before deploying.
 

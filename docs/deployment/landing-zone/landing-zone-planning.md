@@ -1,4 +1,4 @@
-# Planning the Landing Zone
+# Planning
 
 ## Initial considerations
 

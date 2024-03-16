@@ -1,4 +1,4 @@
-# Landing Zone Networking
+# Networking
 
 This repository has carefully planned default address prefixes configured throughout the virtual networks in [Mission Enclave Landing Zone starter](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter) and the add-ons to prevent deployment conflicts. We exepect most customers to define custom address prefixes. However, if you deploy everything "as-is", there are no overlapping address spaces and the networks will deploy without an error. Here are the default address prefixes:
 

@@ -80,33 +80,34 @@ nav:
     - Module documentation: developing-modules/module-documentation.md
   - Deployment guide:    
     - Mission Enclave Landing Zone Starter:
-      - Overview: deployment/landing-zone.md
-      - deployment/landing-zone-prerequisites.md
-      - deployment/landing-zone-planning.md
-      - deployment/landing_zone_networking.md      
-      - Manual Deployment: deployment/landing-zone-manual.md 
-      - GitHub Deployment: deployment/landing-zone-github.md       
-      - deployment/landing-zone-cleanup.md
-      - deployment/landing-zone-faq.md 
+      - Overview: deployment/landing-zone/landing-zone.md
+      - deployment/landing-zone/landing-zone-prerequisites.md
+      - deployment/landing-zone/landing-zone-planning.md
+      - deployment/landing-zone/landing_zone_networking.md      
+      - Manual Deployment: deployment/landing-zone/landing-zone-manual.md 
+      - GitHub Deployment: deployment/landing-zone/landing-zone-github.md       
+      - deployment/landing-zone/landing-zone-cleanup.md
+      - deployment/landing-zone/landing-zone-faq.md 
     - Mission Enclave Policy Starter:
-      - Overview: deployment/policy.md
-      - deployment/policy-planning.md
-      - deployment/policy-governance.md
-      - deployment/policy-remediation.md
-      - Manual Deployment: deployment/policy-manual.md 
-      - GitHub Deployment: deployment/policy-github.md  
-      - deployment/policy-faq.md
+      - Overview: deployment/policy/policy.md
+      - deployment/policy/policy-governance.md
+      - deployment/policy/policy-def.md
+      - deployment/policy/policy-remediation.md
+      - deployment/policy/policy-planning.md
+      - Manual Deployment: deployment/policy/policy-manual.md 
+      - GitHub Deployment: deployment/policy/policy-github.md  
+      - deployment/policy/policy-faq.md
     - Mission Enclave Sentinel Starter: 
-      - Overview: deployment/sentinel.md
-      - deployment/sentinel-manual.md
-      - deployment/sentinel-github.md
-      - deployment/sentinel-faq.md
+      - Overview: deployment/sentinel/sentinel.md
+      - deployment/sentinel/sentinel-manual.md
+      - deployment/sentinel/sentinel-github.md
+      - deployment/sentinel/sentinel-faq.md
     - Mission Enclave Encrypted Transport Starter:
-      - Overview: deployment/encrypted-transport.md
-      - deployment/encrypted-transport-planning.md
-      - deployment/encrypted-transport-implementation.md
-      - deployment/encrypted-transport-github.md
-      - deployment/encrypted-transport-faq.md
+      - Overview: deployment/encrypted-transport/encrypted-transport.md
+      - deployment/encrypted-transport/encrypted-transport-planning.md
+      - deployment/encrypted-transport/encrypted-transport-implementation.md
+      - deployment/encrypted-transport/encrypted-transport-github.md
+      - deployment/encrypted-transport/encrypted-transport-faq.md
     - Terraform Remote State: deployment/remote-state-storage.md
     - GitHub Actions: deployment/github-actions.md
   - FAQ:
