@@ -14,7 +14,7 @@ theme:
   - navigation.top # Enables "back-to-top" button.
   - navigation.footer # Enables "previous" and "next" navigation buttons in footer
 
-  palette:
+  palette:    
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
@@ -52,6 +52,7 @@ nav:
     - Naming conventions: best-practices/naming-conventions.md
     - Security: best-practices/security.md    
   - Basics:
+    - Overview: basics/index.md
     - Terraform:
       - basics/terraform/index.md
       - basics/terraform/prerequisites.md
@@ -80,8 +81,9 @@ nav:
   - Deployment guide:    
     - Landing Zone Starter:
       - Overview: deployment/landing-zone.md
+      - deployment/landing-zone-permissions.md
       - deployment/landing-zone-planning.md
-      - deployment/landing_zone_networking.md
+      - deployment/landing_zone_networking.md      
       - Manual Deployment: deployment/landing-zone-manual.md 
       - GitHub Deployment: deployment/landing-zone-github.md       
       - deployment/landing-zone-cleanup.md
@@ -89,14 +91,14 @@ nav:
     - Policy Starter:
       - Overview: deployment/policy.md
       - deployment/policy-planning.md
-      - deployment/policy-assignment.md
+      - deployment/policy-governance.md
       - deployment/policy-remediation.md
       - Manual Deployment: deployment/policy-manual.md 
       - GitHub Deployment: deployment/policy-github.md  
       - deployment/policy-faq.md
     - Sentinel Starter: 
       - Overview: deployment/sentinel.md
-      - deployment/sentinel-policy.md
+      - deployment/sentinel-manual.md
       - deployment/sentinel-github.md
       - deployment/sentinel-faq.md
     - Encrypted Transport Starter:
@@ -107,9 +109,11 @@ nav:
       - deployment/encrypted-transport-faq.md
     - Terraform Remote State: deployment/remote-state-storage.md
     - GitHub Actions: deployment/github-actions.md
-  - Demos:
-    - Overview: demos.md
   - FAQ:
     - Overview: faq.md
   - Azure NoOps Workshop:
     - Overview: workshop.md
+
+copyright: Copyright &copy; 2024 - Microsoft Corporation
+extra:
+  generator: false

@@ -1,6 +1,6 @@
 # Mission Enclave Landing Zone Starter
 
-The Mission Enclave Landing Zone Starter Terraform module provides an opinionated approach for deploying and managing the core platform capabilities of Azure landing zones architecture using Terraform, with a focus on the central resource hierarchy:
+The Mission Enclave Landing Zone Starter Composition Terraform module provides an opinionated approach for deploying and managing the core platform capabilities of Azure landing zones architecture using Terraform, with a focus on the central resource hierarchy.
 
 ## Architecture
 

@@ -1,6 +1,6 @@
 # Deploy a Mission Enclave Landing Zone manually
 
-This document provides guidance on how to deploy a [Mission Enclave Landing Zone starter](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter).
+This document provides guidance on how to deploy a [Mission Enclave Landing Zone starter](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter) using manual methods.
 
 ## Prerequisites
 
@@ -13,8 +13,6 @@ Before you begin, ensure you have met the following requirements:
 - **Terraform**: You will need Terraform installed to deploy the infrastructure. You can download Terraform from [here](https://www.terraform.io/downloads.html).
 
 - **Knowledge of Azure Landing Zones**: This project involves deploying and managing Azure Landing Zones resources. Familiarity with Azure Landing Zones and its concepts is recommended.
-
-Please replace the links and the software versions with the ones that are relevant to your project.
 
 ## Quickstart
 
@@ -70,7 +68,7 @@ Before provisioning any Azure resources with Terraform you must [initialize a wo
     cd infrastructure/terraform
     ```
 
->NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the `backend "local" {}` block in the [versions.tf](./../infrastructure/terraform/versions.tf) file. This will allow you to deploy the landing zone without having to deploy the remote state storage account first. For more information on remote state, see the [Remote State documentation](./docs/remote-state-storage.md).
+>NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the `backend "local" {}` block in the [versions.tf](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/versions.tf) file. This will allow you to deploy the landing zone without having to deploy the remote state storage account first. For more information on remote state, see the [Remote State documentation](deployment/docs/remote-state-storage.md).
 
 1. Execute `terraform init`
 

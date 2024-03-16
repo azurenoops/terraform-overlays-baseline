@@ -1,6 +1,6 @@
 # Deploy a Mission Enclave Landing Zone using GitHub Actions
 
-This document provides guidance on how to deploy a [Mission Enclave Landing Zone starter](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter).
+This document provides guidance on how to deploy a [Mission Enclave Landing Zone starter](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter)using GitHub Actions.
 
 ## Prerequisites
 
