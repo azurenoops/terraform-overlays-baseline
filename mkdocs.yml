@@ -80,6 +80,7 @@ nav:
     - Module documentation: developing-modules/module-documentation.md
   - Deployment guide:   
     - deployment/prerequisites.md 
+    - Terraform Remote State: deployment/remote-state-storage.md
     - Mission Enclave Landing Zone Starter:
       - Overview: deployment/landing-zone/landing-zone.md     
       - deployment/landing-zone/landing-zone-planning.md
@@ -108,7 +109,6 @@ nav:
       - deployment/encrypted-transport/encrypted-transport-implementation.md
       - deployment/encrypted-transport/encrypted-transport-github.md
       - deployment/encrypted-transport/encrypted-transport-faq.md
-    - Terraform Remote State: deployment/remote-state-storage.md
     - GitHub Actions: deployment/github-actions.md
   - FAQ:
     - Overview: faq.md
