@@ -20,7 +20,7 @@ To find out more about remote state, see the [Remote State documentation](./remo
 
 ## Deployment Planning
 
-If you want to change the default values, you can do so by editing the [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars) file. The following sections describe the parameters that can be changed.
+If you want to change the default values, you can do so by editing the [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraformtfvars/parameters.tfvars) file. The following sections describe the parameters that can be changed.
 
 ### One Subscription or Multiple
 
@@ -37,7 +37,7 @@ Parameter name | Default Value | Description
 
 ### Mission Enclave Landing Zone Global Configuration
 
-The following parameters affect the "01 Global Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars).
+The following parameters affect the "01 Global Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -52,7 +52,7 @@ Parameter name | Default Value | Description | Possible Values
 
 ### Mission Enclave Management Groups
 
-The following parameters affect the "02 Management Groups Configuration" To override the defaults edit the variables file at [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars).
+The following parameters affect the "02 Management Groups Configuration" To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -62,7 +62,7 @@ Parameter name | Default Value | Description
 `root_management_group_id` | anoa | The root management group id for this subscription
 `root_management_group_display_name` | anoa | The root management group display name for this subscription
 
-To modify the management group structure, go to the [locals.tf](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/locals.tf) file and modify the 'management_groups' section. The 'root_management_group_id' is used for the top level groups.
+To modify the management group structure, go to the [locals.tf](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/locals.tf) file and modify the 'management_groups' section. The 'root_management_group_id' is used for the top level groups.
 
 ### Mission Enclave Management Budgets
 
@@ -88,7 +88,7 @@ Parameter name | Default Value | Description
 -------------- | ------------- | -----------
 `deploy_custom_roles` | true | deploy custom roles
 
-To modify the roles structure, go to the [locals.tf](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/locals.tf) file and modify the 'custom_role_definitions' section.
+To modify the roles structure, go to the [locals.tf](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/locals.tf) file and modify the 'custom_role_definitions' section.
 
 ### Mission Enclave - Management Hub Virtual Network
 
@@ -98,7 +98,7 @@ The following will be created:
 - Management Hub Network (main.tf)
 - Management Hub Subnets (main.tf)
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Management Hub Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Management Hub Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 >NOTE: IP address ranges are in CIDR notation. For more information, see [Understanding IP Addressing](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-ip-addresses-overview-arm#understanding-ip-addressing-in-your-virtual-network).
 
@@ -120,7 +120,7 @@ The following will be created:
 - Log Analytics (main.tf)
 - Log Solutions (main.tf)
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Management Operational Logging" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Management Operational Logging" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 Example Configuration:
 
@@ -142,7 +142,7 @@ The following will be created:
 - Azure Firewall (main.tf)
 - Required Firewall rules (main.tf)
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Management Hub Firewall" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Management Hub Firewall" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 Example Configuration:
 
@@ -162,7 +162,7 @@ The following will be created:
 - Azure Bastion (main.tf)
 - Private DNS Zones (main.tf)
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Bastion/Private DNS Zones" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Bastion/Private DNS Zones" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 Example Configuration:
 
@@ -180,7 +180,7 @@ The following will be created:
 - Resource Groups for Identity Spoke Networking
 - Spoke Networks (Identity)
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Identity Management Spoke Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Identity Management Spoke Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 Example Configuration:
 
@@ -198,7 +198,7 @@ The following will be created:
 - Resource Groups for Operations Spoke Networking
 - Spoke Networks (Operations)
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Operations Management Spoke Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Operations Management Spoke Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 Example Configuration:
 
@@ -216,7 +216,7 @@ The following will be created:
 - Resource Groups for DevSecOps Spoke Networking
 - Spoke Networks (DevSecOps)
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "DevSecOps Management Spoke Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "DevSecOps Management Spoke Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 Example Configuration:
 
@@ -235,7 +235,7 @@ The following will be created:
 - Resource Groups for DevSecOps Spoke Components
 - Spoke Components (DevSecOps)
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "DevSecOps Management Spoke Components" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "DevSecOps Management Spoke Components" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 >NOTE: Key Vault and Bastion Jumpbox are not deployed by default. To deploy them, set the `enable_devsecops_resources` variable to `true`.
 
@@ -275,7 +275,7 @@ The following will be created:
 - Resource Groups for Service Health Configuration
 - Service Health Configuration
 
-Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Azure Service Health Configuration" of the common variable definitions file [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Azure Service Health Configuration" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
 
 Example Configuration:
 
