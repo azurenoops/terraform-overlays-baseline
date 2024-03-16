@@ -81,7 +81,7 @@ nav:
   - Deployment guide:    
     - Mission Enclave Landing Zone Starter:
       - Overview: deployment/landing-zone.md
-      - deployment/landing-zone-permissions.md
+      - deployment/landing-zone-prerequisites.md
       - deployment/landing-zone-planning.md
       - deployment/landing_zone_networking.md      
       - Manual Deployment: deployment/landing-zone-manual.md 
