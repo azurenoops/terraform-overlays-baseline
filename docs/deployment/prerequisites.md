@@ -14,15 +14,19 @@ Before you begin, ensure you have met the following requirements:
 
 - **Knowledge of Azure Landing Zones**: This project involves deploying and managing Azure Landing Zones resources. Familiarity with Azure Landing Zones and its concepts is recommended.
 
+- **Knowledge of Azure Policy**: This project involves deploying and managing Azure Policy resources. Familiarity with Azure Policy and its concepts is recommended.
+
+- **Knowledge of Azure Sentinel**: This project involves deploying and managing Azure Sentinel resources. Familiarity with Azure Sentinel and its concepts is recommended.
+
 - **GitHub Actions**: You need to have a GitHub account and a repository to deploy the Mission Enclave Landing Zone.
 
 This requires the following:
 
-* A user that is Global Admin in the Microsoft Entra ID
+- A user that is Global Admin in the Microsoft Entra ID
 
-* Elevation of privileges of this user which grants him/her the “User Access Administrator” permission at the tenant root scope
+- Elevation of privileges of this user which grants him/her the “User Access Administrator” permission at the tenant root scope
 
-* An explicit roleAssignment (RBAC) made at the tenant root scope via CLI or PowerShell (Note: There’s no portal UX to make this roleAssignment)
+- An explicit roleAssignment (RBAC) made at the tenant root scope via CLI or PowerShell (Note: There’s no portal UX to make this roleAssignment)
 
 ## Elevate Access to manage Azure resources in the directory
 
