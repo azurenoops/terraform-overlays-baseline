@@ -1,8 +1,20 @@
 # Prerequisites
 
-Mission Enclave Landing Zone Starter can bootstrap an entire Azure tenant without any infrastructure dependencies, and the user must first have Owner permission on the tenant *root* before deploying.
+Mission Enclave Starters can bootstrap an entire Azure tenant without any infrastructure dependencies, and the user must first have Owner permission on the tenant *root* before deploying.
 
 *Note: Once you have completed the deployment, you can remove the Owner permission from the tenant root, as it will no longer be needed for any subsequent operations.*
+
+Before you begin, ensure you have met the following requirements:
+
+- **Azure Subscription**: You need an Azure subscription to create resources in Azure. If you don't have one, you can create a [free account](https://azure.microsoft.com/free/).
+
+- **Azure CLI or Azure PowerShell**: You need either Azure CLI or Azure PowerShell installed and configured to interact with your Azure account. You can download them from [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) and [here](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps) respectively.
+
+- **Terraform**: You will need Terraform installed to deploy the infrastructure. You can download Terraform from [here](https://www.terraform.io/downloads.html).
+
+- **Knowledge of Azure Landing Zones**: This project involves deploying and managing Azure Landing Zones resources. Familiarity with Azure Landing Zones and its concepts is recommended.
+
+- **GitHub Actions**: You need to have a GitHub account and a repository to deploy the Mission Enclave Landing Zone.
 
 This requires the following:
 
@@ -20,11 +32,11 @@ This requires the following:
 
 1.3  Under *Manage*, select *Properties
 
-![Graphical user interface, text, application, Teams  Description automatically generated](../img/clip_image006.jpg)
+![Graphical user interface, text, application, Teams  Description automatically generated](../../img/clip_image006.jpg)
 
 1.4  Under *Access management for Azure resources,* set the toggle to *Yes
 
-![Graphical user interface, text, application, email  Description automatically generated](../img/clip_image008.jpg)
+![Graphical user interface, text, application, email  Description automatically generated](../../img/clip_image008.jpg)
 
 ### Grant Access to the User at *tenant root scope “/”* to deploy Mission Enclave Landing Zone Starter
 

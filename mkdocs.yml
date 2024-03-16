@@ -78,10 +78,10 @@ nav:
     - Module structure: developing-modules/module-structure.md
     - Module testing: developing-modules/module-testing.md
     - Module documentation: developing-modules/module-documentation.md
-  - Deployment guide:    
+  - Deployment guide:   
+    - deployment/prerequisites.md 
     - Mission Enclave Landing Zone Starter:
-      - Overview: deployment/landing-zone/landing-zone.md
-      - deployment/landing-zone/landing-zone-prerequisites.md
+      - Overview: deployment/landing-zone/landing-zone.md     
       - deployment/landing-zone/landing-zone-planning.md
       - deployment/landing-zone/landing_zone_networking.md      
       - Manual Deployment: deployment/landing-zone/landing-zone-manual.md 

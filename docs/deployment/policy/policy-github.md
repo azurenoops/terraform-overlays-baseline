@@ -1,6 +1,6 @@
 # Deploy a Mission Enclave Policy using GitHub Actions
 
-This document provides guidance on how to deploy a [Mission Enclave Policy starter](https://github.com/azurenoops/ref-scca-enclave-policy-starter)using GitHub Actions.
+This document provides guidance on how to deploy a [Mission Enclave Policy starter](https://github.com/azurenoops/ref-scca-enclave-policy-starter) using GitHub Actions.
 
 ## Prerequisites
 
@@ -106,7 +106,6 @@ GitHub Actions pipelines are located in the [`.github/workflows`](https://github
       | `AZURE_TF_STATE_RESOURCE_GROUP_NAME` | [**Optional**] For Terraform only: override value to configure the remote state resource group name | `rg-terraform-state` |
       | `AZURE_TF_STATE_STORAGE_ACCOUNT_NAME` | [**Optional**] For Terraform only: override value to configure the remote state storage account name | `tfstate` |
       | `AZURE_TF_STATE_STORAGE_CONTAINER_NAME` | [**Optional**] For Terraform only: override value to configure the remote state storage container name | `tfstate` |
-      | `VM_PASSWORD` | Password for the VM | `P@ssw0rd!` |
       | `ARM_ENVIRONMENT` | The Azure environment to deploy to | `public` or `usgovernment` |
 
 ---
