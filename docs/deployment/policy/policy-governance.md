@@ -1,6 +1,6 @@
 # Policy Governance
 
-As part of a default deployment configuration, policy and policy set definitions are deployed at multiple levels within the Misson Enclave Management Group hierarchy as depicted within the below diagram.
+As part of a default deployment configuration, policy and policy set definitions are deployed at multiple levels within the Mission Enclave Management Group hierarchy as depicted within the below diagram.
 
 ![image](./media/MgmtGroups_Policies_v0.1.svg)
 

@@ -4,7 +4,7 @@ The Mission Enclave Landing Zone Starter Composition Terraform module provides a
 
 ## Architecture
 
-![Architecture](../img/normalized-architecture.png)
+![Architecture](../../img/normalized-architecture.png)
 
 ## Design areas
 
