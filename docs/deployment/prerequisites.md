@@ -20,7 +20,7 @@ Before you begin, ensure you have met the following requirements:
 
 - **GitHub Actions**: You need to have a GitHub account and a repository to deploy the Mission Enclave Landing Zone.
 
-This requires the following:
+Mission Enclave Starters requires the following:
 
 - A user that is Global Admin in the Microsoft Entra ID
 
