@@ -79,7 +79,7 @@ nav:
     - Module testing: developing-modules/module-testing.md
     - Module documentation: developing-modules/module-documentation.md
   - Deployment guide:    
-    - Landing Zone Starter:
+    - Mission Enclave Landing Zone Starter:
       - Overview: deployment/landing-zone.md
       - deployment/landing-zone-permissions.md
       - deployment/landing-zone-planning.md
@@ -88,7 +88,7 @@ nav:
       - GitHub Deployment: deployment/landing-zone-github.md       
       - deployment/landing-zone-cleanup.md
       - deployment/landing-zone-faq.md 
-    - Policy Starter:
+    - Mission Enclave Policy Starter:
       - Overview: deployment/policy.md
       - deployment/policy-planning.md
       - deployment/policy-governance.md
@@ -96,12 +96,12 @@ nav:
       - Manual Deployment: deployment/policy-manual.md 
       - GitHub Deployment: deployment/policy-github.md  
       - deployment/policy-faq.md
-    - Sentinel Starter: 
+    - Mission Enclave Sentinel Starter: 
       - Overview: deployment/sentinel.md
       - deployment/sentinel-manual.md
       - deployment/sentinel-github.md
       - deployment/sentinel-faq.md
-    - Encrypted Transport Starter:
+    - Mission Enclave Encrypted Transport Starter:
       - Overview: deployment/encrypted-transport.md
       - deployment/encrypted-transport-planning.md
       - deployment/encrypted-transport-implementation.md

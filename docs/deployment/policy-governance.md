@@ -1,2 +1,2 @@
-# Mission Enclave Policy Governance
+# Policy Governance
 
