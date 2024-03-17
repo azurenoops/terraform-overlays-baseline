@@ -2,8 +2,6 @@
 
 Mission Enclave Starters can bootstrap an entire Azure tenant without any infrastructure dependencies, and the user must first have Owner permission on the tenant *root* before deploying.
 
-*Note: Once you have completed the deployment, you can remove the Owner permission from the tenant root, as it will no longer be needed for any subsequent operations.*
-
 Before you begin, ensure you have met the following requirements:
 
 - **Azure Subscription**: You need an Azure subscription to create resources in Azure. If you don't have one, you can create a [free account](https://azure.microsoft.com/free/).
@@ -27,6 +25,8 @@ Mission Enclave Starters requires the following:
 - Elevation of privileges of this user which grants him/her the “User Access Administrator” permission at the tenant root scope
 
 - An explicit roleAssignment (RBAC) made at the tenant root scope via CLI or PowerShell (Note: There’s no portal UX to make this roleAssignment)
+
+*Note: Once you have completed the deployment, you can remove the Owner permission from the tenant root, as it will no longer be needed for any subsequent operations.*
 
 ## Elevate Access to manage Azure resources in the directory
 
