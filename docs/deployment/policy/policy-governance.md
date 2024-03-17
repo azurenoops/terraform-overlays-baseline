@@ -38,7 +38,7 @@ The table below provides the specific **Custom** and **Built-in** **policy defin
 
 ## Platform
 
-This management group contains all the platform child management groups, like management, connectivity, and identity.
+This management group contains all the platform child management groups, like operations, transport, devsecops, and identity.
 
 ![image](../../img/Platforms_v0.2.jpg)
 
@@ -99,7 +99,7 @@ This management group contains a dedicated subscription for identity. This subsc
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
-| `Policy Definition Sets`  | **13**     |
+| `Policy Definition Sets`  | **4**     |
 | `Policy Definitions`      | **0**     |
 
 The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **Identity Management Group**.
@@ -107,3 +107,76 @@ The table below provides the specific **Custom** and **Built-in** **policy defin
 | **Assignment Name** | **Policy Type** | **NIST Controls** | **Description** | **Effect(s)** |
 | :--- | :--- | :--- | :--- | :--- |
 | **Azure AD Identity Protection Baseline Policies** | `Policy Definition Set`, **Custom**   | AC-2 (12), AC-16, AU-6, AU-6 (4), AU-6 (5), AU-12, AU-12(1),CM-7, IR-4, IR-5, RA-5, SC-3, SI-2, SI-3, SI-3 (1), SI-4, SI-16  | This policy set configures all the Azure AD Identity Protection Baseline Policies. | DeployIfNotExists
+
+## DevSecOps
+
+This management group contains a dedicated subscription for DevSecOps. This subscription will host the Azure DevOps and GitHub resources required for the platform. Policy assignment is predominantly focused on Azure DevOps and GitHub.
+
+![image](../../img/DevSecOps_v0.2.jpg)
+
+| **Policy Type**           | **Count** |
+| :---                      |   :---:   |
+| `Policy Definition Sets`  | **4**     |
+| `Policy Definitions`      | **0**     |
+
+The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **DevSecOps Management Group**.
+
+| **Assignment Name** | **Policy Type** | **NIST Controls** | **Description** | **Effect(s)** |
+| :--- | :--- | :--- | :--- | :--- |
+| **Azure DevOps Baseline Policies** | `Policy Definition Set`, **Custom**   | AC-2 (12), AC-16, AU-6, AU-6 (4), AU-6 (5), AU-12, AU-12(1),CM-7, IR-4, IR-5, RA-5, SC-3, SI-2, SI-3, SI-3 (1), SI-4, SI-16  | This policy set configures all the Azure DevOps Baseline Policies. | DeployIfNotExists
+
+## Security
+
+This management group contains a dedicated subscription for security. This subscription will host the Azure Security Center and Azure Sentinel resources required for the platform. Policy assignment is predominantly focused on Azure Security Center and Azure Sentinel.
+
+![image](../../img/Security_v0.2.jpg)
+
+| **Policy Type**           | **Count** |
+| :---                      |   :---:   |
+| `Policy Definition Sets`  | **4**     |
+| `Policy Definitions`      | **0**     |
+
+The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **Security Management Group**.
+
+| **Assignment Name** | **Policy Type** | **NIST Controls** | **Description** | **Effect(s)** |
+| :--- | :--- | :--- | :--- | :--- |
+| **Azure Security Center Baseline Policies** | `Policy Definition Set`, **Custom**   | AC-2 (12), AC-16, AU-6, AU-6 (4), AU-6 (5), AU-12, AU-12(1),CM-7, IR-4, IR-5, RA-5, SC-3, SI-2, SI-3, SI-3 (1), SI-4, SI-16  | This policy set configures all the Azure Security Center Baseline Policies. | DeployIfNotExists
+
+## Workloads
+
+This management group contains a dedicated subscription for workloads. This subscription will host the Azure resources required for the platform, like Azure Virtual Machines, Azure SQL Databases, and Azure App Services. Policy assignment is predominantly focused on Azure Security Center and Azure Policy.
+
+![image](../../img/Workloads_v0.2.jpg)
+
+> **Note**: The Workloads Management Group is a placeholder for the actual workloads that will be deployed by your organization. The actual workloads will be deployed in the subscriptions created under the Workloads Management Group. The policy assignments for the Workloads Management Group are not defined in the default configuration.
+
+## Sandbox
+
+This management group is for subscriptions that will only be used for testing and exploration by an organization. These subscriptions will be securely disconnected from the corporate and online landing zones. Sandboxes also have a less restrictive set of policies assigned to enable testing, exploration, and configuration of Azure services.
+
+![image](../../img/Security_v0.2.jpg)
+
+| **Policy Type**           | **Count** |
+| :---                      |   :---:   |
+| `Policy Definition Sets`  | **4**     |
+| `Policy Definitions`      | **0**     |
+
+The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **Sandbox Management Group**.
+
+| Assignment Name                                                | Definition Name                                                | Policy Type                         | Description                                                                                                                                                                                            | Effect(s)         |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| **Enforce ALZ Sandbox Guardrails** | **Enforce policies in the Sandbox Landing Zone** | `Policy Definition Set`, **Custom** | This initiative will help enforce and govern subscriptions that are placed within the Sandobx Management Group. Policies included: <ul><li>Deny vNET peering across subscriptions<li>Deny the deployment of vWAN/ER/VPN gateways.</ul>                                                                              | Enforce              |
+
+## Versioning
+
+Each policy definition and initiative contains a version in its metadata section:
+```terraform
+  assignment_metadata = {
+    version  = "1.0.0"
+    category = "General"
+    anoaCloudEnvironments = [
+      "AzureCloud",
+      "AzureUSGovernment",
+    ]
+  }
+```
