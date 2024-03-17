@@ -2,7 +2,7 @@
 
 As part of a default deployment configuration, policy and policy set definitions are deployed at multiple levels within the Mission Enclave Management Group hierarchy as depicted within the below diagram.
 
-![image](./media/MgmtGroups_Policies_v0.1.svg)
+![image](../../img/MgmtGroups_Policies_v0.1.jpg)
 
 The subsequent sections will provide a summary of policy sets and policy set definitions applied at each level of the Management Group hierarchy.
 
