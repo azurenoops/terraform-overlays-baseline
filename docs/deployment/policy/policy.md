@@ -9,7 +9,7 @@ The Mission Enclave Policy Starter Composition Terraform module provides an opin
 
 ## Architecture
 
-![Architecture](../img/normalized-architecture.png)
+![Architecture](../../img/MgmtGroups_Policies_v0.2.jpg)
 
 ## Design areas
 

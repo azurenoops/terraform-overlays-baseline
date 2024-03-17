@@ -2,8 +2,6 @@
 
 As part of a default deployment configuration, policy and policy set definitions are deployed at multiple levels within the Mission Enclave Management Group hierarchy as depicted within the below diagram.
 
-![image](../../img/MgmtGroups_Policies_v0.1.jpg)
-
 The subsequent sections will provide a summary of policy sets and policy set definitions applied at each level of the Management Group hierarchy.
 
 > **NOTE**: Although the below sections will define which policy definitions/sets are applied at specific scopes, please remember that policy will inherit within your management group hierarchy.
@@ -14,7 +12,7 @@ The subsequent sections will provide a summary of policy sets and policy set def
 
 This management group is a parent to all the other management groups created within the default Misson Enclave landing zone configuration. Policy assignment is predominantly focused on assignment of security and monitoring best practices to ensure compliance and reduced operational overhead.
   
-![image](../../img/IntRoot_v0.1.jpg)
+![image](../../img/IntRoot_v0.2.jpg)
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
@@ -42,7 +40,7 @@ The table below provides the specific **Custom** and **Built-in** **policy defin
 
 This management group contains all the platform child management groups, like management, connectivity, and identity.
 
-![image](../../img/IntRoot_v0.1.jpg)
+![image](../../img/Platforms_v0.2.jpg)
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
@@ -61,7 +59,7 @@ The table below provides the specific **Custom** and **Built-in** **policy defin
 
 This management group contains a dedicated subscription for connectivity. This subscription will host the Azure networking resources required for the platform, like Azure Virtual WAN, Azure Firewall, and Azure DNS private zones. Policy assignment is predominantly focused on Azure DDoS Protection.
  
-![image](../../img/IntRoot_v0.1.jpg)
+![image](../../img/Transport_v0.2.jpg)
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
@@ -80,7 +78,7 @@ The table below provides the specific **Custom** and **Built-in** **policy defin
 
 This management group contains a dedicated subscription for operations. This subscription will host the Azure monitoring and management resources required for the platform, like Log Analytics workspaces, Azure Automation accounts, and Azure Monitor. Policy assignment is predominantly focused on Azure Monitor and Azure Security Center.
 
-![image](../../img/IntRoot_v0.1.jpg)
+![image](../../img/Operations_v0.2.jpg)
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
@@ -97,7 +95,7 @@ The table below provides the specific **Custom** and **Built-in** **policy defin
 
 This management group contains a dedicated subscription for identity. This subscription will host the Azure Active Directory and Azure AD Domain Services. Policy assignment is predominantly focused on Azure AD Identity Protection.
 
-![image](../../img/IntRoot_v0.1.jpg)
+![image](../../img/Identity_v0.2.jpg)
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
