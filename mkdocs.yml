@@ -46,7 +46,7 @@ markdown_extensions:
 nav:
   - Home:
     - Overview: index.md
-  - Best practices:
+  - Best Practices:
     - Overview: best-practices/overview.md
     - Key concepts: best-practices/key-concepts.md
     - Code structure: best-practices/code-structure.md
@@ -72,14 +72,14 @@ nav:
       - basics/noops/update-resources.md
       - basics/noops/destroy-resources.md
       - basics/noops/summary.md
-  - Reusable modules:
+  - Reusable Modules:
     - Module library: https://registry.terraform.io/search/modules?namespace=azurenoops&provider=azure
   - Developing Modules:
     - Overview: developing-modules/overview.md
     - Module structure: developing-modules/module-structure.md
     - Module testing: developing-modules/module-testing.md
     - Module documentation: developing-modules/module-documentation.md
-  - Deployment guide:   
+  - Deployment Guides:   
     - deployment/prerequisites.md 
     - Terraform Remote State: deployment/remote-state-storage.md
     - Mission Enclave Landing Zone Starter:
