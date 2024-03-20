@@ -45,26 +45,36 @@ This section provides a list of policy definitions included in the Mission Encla
 
 | Policy Name | Description | Policy Type | Initiative | Parameter |
 | :--- | :---: | :---: | :---: | :---: |
+| `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
+| `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ### Operations Management Group
 
 | Policy Name | Description | Policy Type | Initiative | Parameter |
 | :--- | :---: | :---: | :---: | :---: |
+| `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
+| `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ### Security Management Group
 
 | Policy Name | Description | Policy Type | Initiative | Parameter |
 | :--- | :---: | :---: | :---: | :---: |
+| `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
+| `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ### Identity Management Group
 
 | Policy Name | Description | Policy Type | Initiative | Parameter |
 | :--- | :---: | :---: | :---: | :---: |
+| `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
+| `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ### DevSecOps Management Group
 
 | Policy Name | Description | Policy Type | Initiative | Parameter |
 | :--- | :---: | :---: | :---: | :---: |
+| `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
+| `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ## Workloads Management Group
 
