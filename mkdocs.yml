@@ -46,7 +46,8 @@ markdown_extensions:
 nav:
   - Home:
     - Overview: index.md
-  - Best practices:    
+  - Best practices:
+    - Overview: best-practices/overview.md
     - Key concepts: best-practices/key-concepts.md
     - Code structure: best-practices/code-structure.md
     - Naming conventions: best-practices/naming-conventions.md
