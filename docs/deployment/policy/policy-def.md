@@ -47,6 +47,11 @@ This section provides a list of policy definitions included in the Mission Encla
 | :--- | :---: | :---: | :---: | :---: |
 | `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
 | `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Deny Azure Bastion Hosts resource creation` | This policy denies the creation of Azure Bastion Hosts under the assigned scope. |  `Policy Definition`,**Custom** | Network Governance | |
+| `RDP access from the Internet should be blocked` | This policy denies any network security rule that allows RDP access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Require NSG on VNET` | This policy requires that a Network Security Group (NSG) is associated with a Virtual Network. |  `Policy Definition`,**Custom** | Network Governance | |
+| `[Preview]: All Internet traffic should be routed via your deployed Azure Firewall.` | This policy requires that all Internet traffic should be routed via your deployed Azure Firewall. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Subscription should configure the Azure Firewall Premium to provide additional layer of protection.` | Azure Firewall Premium provides advanced threat protection that meets the needs of highly sensitive and regulated environments. Deploy Azure Firewall Premium to your subscription and make sure all the service traffic are protected by Azure Firewall Premium. To learn more about Azure Firewall Premium, visit https://aka.ms/fw-premium. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ### Operations Management Group
 
@@ -54,6 +59,11 @@ This section provides a list of policy definitions included in the Mission Encla
 | :--- | :---: | :---: | :---: | :---: |
 | `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
 | `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Deny Azure Bastion Hosts resource creation` | This policy denies the creation of Azure Bastion Hosts under the assigned scope. |  `Policy Definition`,**Custom** | Network Governance | |
+| `RDP access from the Internet should be blocked` | This policy denies any network security rule that allows RDP access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Require NSG on VNET` | This policy requires that a Network Security Group (NSG) is associated with a Virtual Network. |  `Policy Definition`,**Custom** | Network Governance | |
+| `[Preview]: All Internet traffic should be routed via your deployed Azure Firewall.` | This policy requires that all Internet traffic should be routed via your deployed Azure Firewall. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Subscription should configure the Azure Firewall Premium to provide additional layer of protection.` | Azure Firewall Premium provides advanced threat protection that meets the needs of highly sensitive and regulated environments. Deploy Azure Firewall Premium to your subscription and make sure all the service traffic are protected by Azure Firewall Premium. To learn more about Azure Firewall Premium, visit https://aka.ms/fw-premium. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ### Security Management Group
 
@@ -61,6 +71,11 @@ This section provides a list of policy definitions included in the Mission Encla
 | :--- | :---: | :---: | :---: | :---: |
 | `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
 | `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Deny Azure Bastion Hosts resource creation` | This policy denies the creation of Azure Bastion Hosts under the assigned scope. |  `Policy Definition`,**Custom** | Network Governance | |
+| `RDP access from the Internet should be blocked` | This policy denies any network security rule that allows RDP access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Require NSG on VNET` | This policy requires that a Network Security Group (NSG) is associated with a Virtual Network. |  `Policy Definition`,**Custom** | Network Governance | |
+| `[Preview]: All Internet traffic should be routed via your deployed Azure Firewall.` | This policy requires that all Internet traffic should be routed via your deployed Azure Firewall. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Subscription should configure the Azure Firewall Premium to provide additional layer of protection.` | Azure Firewall Premium provides advanced threat protection that meets the needs of highly sensitive and regulated environments. Deploy Azure Firewall Premium to your subscription and make sure all the service traffic are protected by Azure Firewall Premium. To learn more about Azure Firewall Premium, visit https://aka.ms/fw-premium. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ### Identity Management Group
 
@@ -68,6 +83,11 @@ This section provides a list of policy definitions included in the Mission Encla
 | :--- | :---: | :---: | :---: | :---: |
 | `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
 | `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Deny Azure Bastion Hosts resource creation` | This policy denies the creation of Azure Bastion Hosts under the assigned scope. |  `Policy Definition`,**Custom** | Network Governance | |
+| `RDP access from the Internet should be blocked` | This policy denies any network security rule that allows RDP access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Require NSG on VNET` | This policy requires that a Network Security Group (NSG) is associated with a Virtual Network. |  `Policy Definition`,**Custom** | Network Governance | |
+| `[Preview]: All Internet traffic should be routed via your deployed Azure Firewall.` | This policy requires that all Internet traffic should be routed via your deployed Azure Firewall. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Subscription should configure the Azure Firewall Premium to provide additional layer of protection.` | Azure Firewall Premium provides advanced threat protection that meets the needs of highly sensitive and regulated environments. Deploy Azure Firewall Premium to your subscription and make sure all the service traffic are protected by Azure Firewall Premium. To learn more about Azure Firewall Premium, visit https://aka.ms/fw-premium. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ### DevSecOps Management Group
 
@@ -75,6 +95,11 @@ This section provides a list of policy definitions included in the Mission Encla
 | :--- | :---: | :---: | :---: | :---: |
 | `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
 | `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Deny Azure Bastion Hosts resource creation` | This policy denies the creation of Azure Bastion Hosts under the assigned scope. |  `Policy Definition`,**Custom** | Network Governance | |
+| `RDP access from the Internet should be blocked` | This policy denies any network security rule that allows RDP access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Require NSG on VNET` | This policy requires that a Network Security Group (NSG) is associated with a Virtual Network. |  `Policy Definition`,**Custom** | Network Governance | |
+| `[Preview]: All Internet traffic should be routed via your deployed Azure Firewall.` | This policy requires that all Internet traffic should be routed via your deployed Azure Firewall. |  `Policy Definition`,**Custom** | Network Governance | |
+| `Subscription should configure the Azure Firewall Premium to provide additional layer of protection.` | Azure Firewall Premium provides advanced threat protection that meets the needs of highly sensitive and regulated environments. Deploy Azure Firewall Premium to your subscription and make sure all the service traffic are protected by Azure Firewall Premium. To learn more about Azure Firewall Premium, visit https://aka.ms/fw-premium. |  `Policy Definition`,**Custom** | Network Governance | |
 
 ## Workloads Management Group
 
