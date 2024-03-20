@@ -45,19 +45,21 @@ This section provides a list of policy definitions included in the Mission Encla
 
 | Policy Name | Description | Policy Type | Initiative | Parameter |
 | :--- | :---: | :---: | :---: | :---: |
-| `Deny the creation of public IP` | This policy denies creation of Public IPs under the assigned scope. |  `Policy Definition`,**Built-in** | Network Governance | |
-| `Management port access from the Internet should be blocked` | This policy denies any network security rule that allows management port access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
-| `Deny Azure Bastion Hosts resource creation` | This policy denies the creation of Azure Bastion Hosts under the assigned scope. |  `Policy Definition`,**Custom** | Network Governance | |
-| `RDP access from the Internet should be blocked` | This policy denies any network security rule that allows RDP access from the Internet. |  `Policy Definition`,**Custom** | Network Governance | |
-| `Require NSG on VNET` | This policy requires that a Network Security Group (NSG) is associated with a Virtual Network. |  `Policy Definition`,**Custom** | Network Governance | |
-| `[Preview]: All Internet traffic should be routed via your deployed Azure Firewall` | This policy requires that all Internet traffic should be routed via your deployed Azure Firewall. |  `Policy Definition`,**Built-in** | Network Governance | |
-| `Subscription should configure the Azure Firewall Premium to provide additional layer of protection` | Azure Firewall Premium provides advanced threat protection that meets the needs of highly sensitive and regulated environments. Deploy Azure Firewall Premium to your subscription and make sure all the service traffic are protected by Azure Firewall Premium. To learn more about Azure Firewall Premium, visit https://aka.ms/fw-premium. |  `Policy Definition`,**Built-in** | Network Governance | |
-| `Configure virtual network to enable Flow Log and Traffic Analytics` | This policy requires that all virtual networks should have Flow Log and Traffic Analytics enabled. |  `Policy Definition`,**Built-in** | Network Governance | |
-| `Configure network security groups to enable traffic analytics` | Traffic analytics can be enabled for all network security groups hosted in a particular region with the settings provided during policy creation. If it already has Traffic analytics enabled, then policy does not overwrite its settings. Flow Logs are also enabled for the Network security groups that do not have it. Traffic analytics is a cloud-based solution that provides visibility into user and application activity in cloud networks. |  `Policy Definition`,**Built-in** | Network Governance | |
-| `Network Watcher flow logs should have traffic analytics enabled` | This policy requires that all Network Watcher flow logs should have traffic analytics enabled. |  `Policy Definition`,**Built-in** | Network Governance | |
-| `Flow logs should be configured for every network security group` | This policy requires that all network security groups should have flow logs enabled. |  `Policy Definition`,**Built-in** | Network Governance | |
-| `Azure DDoS Protection should be enabled`  | This policy requires that Azure DDoS Protection should be enabled for virtual networks. |  `Policy Definition`,**Built-in** | Network Governance | |
-| `Network interfaces should not have public IPs` | This policy denies the creation of public IP addresses on network interfaces. |  `Policy Definition`,**Built-in** | Network Governance | |
+| `Key vaults should have soft delete enabled` | This policy requires that all Key Vaults should have soft delete enabled. |  `Policy Definition`,**Built-in** | Key Vault Governance | |
+| `Key vaults should have deletion protection enabled` | This policy requires that all Key Vaults should have deletion protection enabled. |  `Policy Definition`,**Built-in** | Key Vault Governance | |
+| `Key Vault secrets should have an expiration date` | This policy requires that all Key Vault secrets should have an expiration date. |  `Policy Definition`,**Built-in** | Key Vault Governance | |
+| `Key Vault keys should have an expiration date` | This policy requires that all Key Vault keys should have an expiration date. |  `Policy Definition`,**Built-in** | Key Vault Governance | |
+| `Azure Key Vault should have firewall enabled` | This policy requires that all Key Vaults should have firewall enabled. |  `Policy Definition`,**Built-in** | Key Vault Governance | |
+| `Keys should have more than the specified number of days before expiration` | This policy requires that all keys should have more than the specified number of days before expiration. |  `Policy Definition`,**Built-in** | Key Vault Governance | |
+| `Secrets should have more than the specified number of days before expiration` | This policy requires that all secrets should have more than the specified number of days before expiration. |  `Policy Definition`,**Built-in** | Key Vault Governance | |
+| `Azure Key Vaults should use private link` | This policy requires that all Key Vaults should use private link. |  `Policy Definition`,**Built-in** | Key Vault Governance | |
+| `Storage accounts should use private link` | This policy requires that all Storage Accounts should use private link. |  `Policy Definition`,**Built-in** | Storage Account Governance | |
+| `Storage accounts should have the specified minimum TLS version` | This policy requires that all Storage Accounts should have the specified minimum TLS version. |  `Policy Definition`,**Built-in** | Storage Account Governance | |
+| `Storage accounts should allow access from trusted Microsoft services` | This policy requires that all Storage Accounts should allow access from trusted Microsoft services. |  `Policy Definition`,**Built-in** | Storage Account Governance | |
+| `Storage accounts should disable public network access` | This policy requires that all Storage Accounts should disable public network access. |  `Policy Definition`,**Built-in** | Storage Account Governance | |
+| `Storage accounts should prevent cross tenant object replication` | This policy requires that all Storage Accounts should prevent cross tenant object replication. |  `Policy Definition`,**Built-in** | Storage Account Governance | |
+| `Configure secure transfer of data on a storage account` | This policy requires that all Storage Accounts should have secure transfer of data enabled. |  `Policy Definition`,**Built-in** | Storage Account Governance | |
+| `Geo-redundant storage should be enabled for Storage Accounts` | This policy requires that all Storage Accounts should have geo-redundant storage enabled. |  `Policy Definition`,**Built-in** | Storage Account Governance | |
 
 ### Operations Management Group
 
