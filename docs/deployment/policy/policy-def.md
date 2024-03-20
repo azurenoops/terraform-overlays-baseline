@@ -1,4 +1,4 @@
-# Policy Defintions
+# Policy Definitions
 
 This section provides a list of policy definitions included in the Mission Enclave Policy starter implementation.
 
