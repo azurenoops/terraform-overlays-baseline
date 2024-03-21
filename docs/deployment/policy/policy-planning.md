@@ -50,7 +50,7 @@ Parameter name | Default Value | Description
 `policy_non_compliance_message_default_enabled` | true         | set to true to enable the policy non-compliance message by default
 `policy_exemption_expires_on`                   | "2025-12-31" | The date the policy exemption expires
 
-### Definition and Assignment Scopes
+#### Definition and Assignment Scopes
 
 - Should be Defined as **high up** in the hierarchy as possible.
 - Should be Assigned as **low down** in the hierarchy as possible.
@@ -61,7 +61,7 @@ Parameter name | Default Value | Description
 
 > **Requirement:** Ensure the deployment account has at least [Resource Policy Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#resource-policy-contributor) role at the `definition_scope` and `assignment_scope`. To successfully create Role-assignments (or group memberships) the same account may also require the [User Access Administrator](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator) role at the `assignment_scope` or preferably the `definition_scope` to simplify workflows.
 
-### Remediation Tasks and Role Assignments
+#### Remediation Tasks and Role Assignments
 
 Role assignments and remediation tasks will be automatically created if the Policy Definition contains a list of Role Definitions.
 
@@ -69,14 +69,14 @@ The remediation tasks will be created with the following naming convention: `rem
 
 You can override these with explicit Role Assignments, or specify `skip_role_assignment=true` to omit creation, this is also skipped when using User Managed Identities. By default role assignment scopes will match the policy assignment but can be changed by setting role_assignment_scope.
 
-### Assignment Effects
+#### Assignment Effects
 
 The `Append` effect is used to add a tag to a resource if it doesn't already have it. The `DeployIfNotExists` effect is used to deploy a resource if it doesn't already exist. The `Modify` effect is used to modify a resource if it doesn't match the policy. The `Audit` effect is used to audit a resource for compliance. The `Deny` effect is used to deny a resource from being created or modified.
 
 > **Note:** If you're managing tags, it's recommended to use `Modify` instead of `Append` as Modify provides additional operation types and the ability to remediate existing resources. However, Append is recommended if you aren't able to create a managed identity or Modify doesn't yet support the alias for the resource property.
 > [Microsoft Docs: Understand how effects work](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effects)
 
-### On-demand evaluation scan
+#### On-demand evaluation scan
 
 To trigger an on-demand [compliance scan](https://learn.microsoft.com/en-us/azure/governance/policy/how-to/get-compliance-data) with terraform, set `re_evaluate_compliance = true` on `*_assignment` modules, defaults to `false (ExistingNonCompliant)`.
 
