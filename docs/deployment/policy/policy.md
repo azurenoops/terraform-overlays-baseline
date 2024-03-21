@@ -6,7 +6,6 @@ The Mission Enclave Policy Starter Composition Terraform module provides an opin
 
 > **IMPORTANT NOTE:** Mission Enclave Policy Starter is to provide a secure, Zero Trust/SCCA aligned, and compliant environment. It is not a one-size-fits-all solution. It is a starting point that should be customized to meet the specific needs of your organization.
 
-
 ## Architecture
 
 ![Architecture](../../img/MgmtGroups_Policies_v0.2.jpg)

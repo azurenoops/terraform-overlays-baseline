@@ -2,9 +2,29 @@
 
 ## Overview
 
-All the GitHub Actions for Azure NoOps are stored in the `.github/workflows` directory of the certain starters and add-on projects. These are the automated workflows we use for ensuring a quality working product. We use GitHub Actions to automate the process of building, testing, and deploying the infrastructure.
+This document provides guidance on how to use GitHub Actions to automate the deployment of Azure NoOps resources.
+
+## What's CI/CD?
+
+CI/CD stands for _Continuous Integration_ and _Continuous Delivery_.
+
+Continuous Integration is a software development practice that requires developers to integrate code into a shared repository several times a day.
+Each integration can then be verified by an automated build and automated tests.
+By doing so, you can detect errors quickly, and locate them more easily.
+
+Continuous Delivery pushes this practice further, by preparing for a release to production after each successful build.
+By doing so, you can get working software into the hands of users faster.
+
+## What's GitHub Actions?
+
+[GitHub Actions](https://github.com/features/actions) is a service that lets you automate your software development workflows.
+It allows you to run workflows that can be triggered by any event on the GitHub platform, such as opening a pull request or pushing a commit to a repository.
+
+It's a great way to automate your CI/CD pipelines, and it's free for public repositories.
 
 ## Workflows
+
+All the GitHub Actions for Azure NoOps are stored in the `.github/workflows` directory of the certain starters and add-on projects. These are the automated workflows we use for ensuring a quality working product. We use GitHub Actions to automate the process of building, testing, and deploying the infrastructure.
 
 These are the automated workflows we use for ensuring a quality working product. All workflows are part of a suite of terraform related actions - find them at <https://github.com/azurenoops/terraform-github-actions>
 

@@ -6,33 +6,15 @@ This document provides guidance on how to deploy a [Mission Enclave Landing Zone
 
 To deploy the Mission Enclave Landing Zone, we'll setup a GitHub Actions CI/CD workflow that will build and deploy our application whenever we push new commits to the main branch of our repository.
 
-## What's CI/CD?
-
-CI/CD stands for _Continuous Integration_ and _Continuous Delivery_.
-
-Continuous Integration is a software development practice that requires developers to integrate code into a shared repository several times a day.
-Each integration can then be verified by an automated build and automated tests.
-By doing so, you can detect errors quickly, and locate them more easily.
-
-Continuous Delivery pushes this practice further, by preparing for a release to production after each successful build.
-By doing so, you can get working software into the hands of users faster.
-
-## What's GitHub Actions?
-
-[GitHub Actions](https://github.com/features/actions) is a service that lets you automate your software development workflows.
-It allows you to run workflows that can be triggered by any event on the GitHub platform, such as opening a pull request or pushing a commit to a repository.
-
-It's a great way to automate your CI/CD pipelines, and it's free for public repositories.
-
 ## Configure remote state storage account
 
 Before you use Azure Storage as a backend for the state file, you must create a storage account.
 
-Reference the [Remote State Storage](./remote-state-storage.md) directory for the Terraform configuration to create the storage account and container.
+Reference the [Remote State Storage](../remote-state-storage.md) directory for the Terraform configuration to create the storage account and container.
 
 ### Using GitHub Dependencies Action
 
-Run the following action [deploy_dependencies.yml](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/.github/workflows/deploy_dependencies.yml) to create the storage account and container.
+Run the following action [deploy_dependencies.yml](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/.github/workflows/deploy_dependencies.yml) to create the storage account and container.
 
 ## Setting Up GitHub Actions for deployment
 

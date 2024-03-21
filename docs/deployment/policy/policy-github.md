@@ -2,23 +2,7 @@
 
 This document provides guidance on how to deploy a [Mission Enclave Policy starter](https://github.com/azurenoops/ref-scca-enclave-policy-starter) using GitHub Actions.
 
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-- **Azure Subscription**: You need an Azure subscription to create resources in Azure. If you don't have one, you can create a [free account](https://azure.microsoft.com/free/).
-
-- **Azure CLI or Azure PowerShell**: You need either Azure CLI or Azure PowerShell installed and configured to interact with your Azure account. You can download them from [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) and [here](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps) respectively.
-
-- **Terraform**: You will need Terraform installed to deploy the infrastructure. You can download Terraform from [here](https://www.terraform.io/downloads.html).
-
-- **Knowledge of Azure Policys**: This project involves deploying and managing Azure Policys resources. Familiarity with Azure Policys and its concepts is recommended.
-
-- **Knowledge of Azure Policy**: This project involves deploying and managing Azure Policy resources. Familiarity with Azure Policy and its concepts is recommended.
-
-- **GitHub Actions**: You need to have a GitHub account and a repository to deploy the Mission Enclave Policy.
-
-Please replace the links and the software versions with the ones that are relevant to your project.
+Learn more about Azure NoOps GitHub Actions [here](../github-actions.md).
 
 ## GitHub Deployment
 
@@ -32,7 +16,7 @@ Reference the [Remote State Storage](./remote-state-storage.md) directory for th
 
 ### Using GitHub Dependencies Action
 
-Run the following action [deploy_dependencies.yml](https://github.com/azurenoops/ref-scca-enclave-policy-starter/.github/workflows/deploy_dependencies.yml) to create the storage account and container.
+Run the following action [deploy_dependencies.yml](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/.github/workflows/deploy_dependencies.yml) to create the storage account and container.
 
 ## Setting Up GitHub Actions for deployment
 
