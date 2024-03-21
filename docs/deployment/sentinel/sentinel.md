@@ -4,7 +4,7 @@ The Mission Enclave Sentinel Starter Terraform module provides an opinionated ap
 
 ## Architecture
 
-![Architecture](../img/normalized-architecture.png)
+![Architecture](../../../img/normalized-sentinel-architecture.png)
 
 ## Design areas
 
@@ -12,8 +12,12 @@ The Mission Enclave Sentinel Starter Terraform module is designed to address the
 
 [Resource organization](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org)
 
-- Create custom Policy Assignments, Policy Definitions and Policy Set Definitions (Initiatives)
+- Create a management group hierarchy for the Sentinel platform
 
 [Identity and access management](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/identity-access)
 
-- Secure the identity subscription using Azure Policy
+- Azure Active Directory tenant for the Sentinel platform
+
+[Security](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/security)
+
+- Enable Azure Security Center and Azure Defender for the Sentinel platform

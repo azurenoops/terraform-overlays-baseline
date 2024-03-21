@@ -108,8 +108,8 @@ nav:
     - Mission Enclave Encrypted Transport Starter:
       - Overview: deployment/encrypted-transport/encrypted-transport.md
       - deployment/encrypted-transport/encrypted-transport-planning.md
-      - deployment/encrypted-transport/encrypted-transport-implementation.md
-      - deployment/encrypted-transport/encrypted-transport-github.md
+      - Manual Deployment: deployment/encrypted-transport/encrypted-transport-manual.md
+      - GitHub Deployment: deployment/encrypted-transport/encrypted-transport-github.md
       - deployment/encrypted-transport/encrypted-transport-faq.md
     - GitHub Actions: deployment/github-actions.md
   - FAQ:
