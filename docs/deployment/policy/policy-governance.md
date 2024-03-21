@@ -65,8 +65,9 @@ This management group contains a dedicated subscription for connectivity. This s
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
-| `Policy Definition Sets`  | **13**     |
+| `Policy Definition Sets`  | **2**     |
 | `Policy Definitions`      | **0**     |
+| `Policy Exemptions`       | **1**     |
 
 The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **Transport Management Group**.
 
@@ -103,7 +104,7 @@ This management group contains a dedicated subscription for forensics. This subs
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
-| `Policy Definition Sets`  | **4**     |
+| `Policy Definition Sets`  | **3**     |
 | `Policy Definitions`      | **0**     |
 
 The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **Forensics Management Group**.
@@ -122,7 +123,7 @@ This management group contains a dedicated subscription for identity. This subsc
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
-| `Policy Definition Sets`  | **4**     |
+| `Policy Definition Sets`  | **2**     |
 | `Policy Definitions`      | **0**     |
 
 The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **Identity Management Group**.
@@ -140,7 +141,7 @@ This management group contains a dedicated subscription for DevSecOps. This subs
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
-| `Policy Definition Sets`  | **4**     |
+| `Policy Definition Sets`  | **3**     |
 | `Policy Definitions`      | **0**     |
 
 The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **DevSecOps Management Group**.
@@ -159,7 +160,7 @@ This management group contains a dedicated subscription for security. This subsc
 
 | **Policy Type**           | **Count** |
 | :---                      |   :---:   |
-| `Policy Definition Sets`  | **4**     |
+| `Policy Definition Sets`  | **2**     |
 | `Policy Definitions`      | **0**     |
 
 The table below provides the specific **Custom** and **Built-in** **policy definitions** and **policy definitions sets** assigned at the **Security Management Group**.

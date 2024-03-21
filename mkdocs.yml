@@ -101,8 +101,9 @@ nav:
       - deployment/policy/policy-faq.md
     - Mission Enclave Sentinel Starter: 
       - Overview: deployment/sentinel/sentinel.md
-      - deployment/sentinel/sentinel-manual.md
-      - deployment/sentinel/sentinel-github.md
+      - deployment/sentinel/sentinel-planning.md
+      - Manual Deployment: deployment/sentinel/sentinel-manual.md
+      - GitHub Deployment: deployment/sentinel/sentinel-github.md
       - deployment/sentinel/sentinel-faq.md
     - Mission Enclave Encrypted Transport Starter:
       - Overview: deployment/encrypted-transport/encrypted-transport.md

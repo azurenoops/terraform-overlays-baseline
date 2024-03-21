@@ -1,4 +1,4 @@
-# Deploy a Mission Enclave Sentinel Starter manually
+# Deploying a Mission Enclave Sentinel Starter using manual deployment
 
 This document provides guidance on how to deploy a [Mission Enclave Sentinel starter](https://github.com/azurenoops/ref-scca-enclave-sentinel-starter) using manual methods.
 
