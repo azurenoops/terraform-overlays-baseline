@@ -2,7 +2,7 @@
 
 ## Initial considerations
 
-The Mission Enclave Landing Zone Starter Terraform module is designed to be used as a starting point for deploying a landing zone. It is not intended to be used as a complete solution, but rather as a starting point that can be customized to meet specific requirements.
+The Encrypted Transport for SCCA-Compliant Enclave Reference Add-on Starter Terraform module is designed to be used as a starting point for deploying VPN services to an existing SCCA-compliant enclave. This starter is not intended to be used as a standalone VPN solution as it requires an SCCA-compliant Hub (VNet, Firewall, & Log Analytics Workspace) to be deployed first so that it can peer to the Hub virtual network and push logs to the Log Analytics Workspace.
 
 Before getting started with this module, please take note of the following considerations:
 
