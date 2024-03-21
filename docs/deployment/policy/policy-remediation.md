@@ -25,4 +25,3 @@ When implementing policy remediation, consider the following best practices:
 - **Monitor and audit remediation**: Regularly monitor and audit the remediation process to ensure that non-compliant resources are being corrected effectively. This can help identify any issues or gaps in the remediation process and ensure that resources remain in compliance.
 
 - **Document remediation procedures**: Document the procedures for identifying and correcting non-compliant resources, including the steps to be taken and the tools to be used. This can help ensure that remediation is performed consistently and effectively, even in the absence of the original remediation team.
-
