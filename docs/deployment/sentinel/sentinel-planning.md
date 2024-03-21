@@ -12,6 +12,10 @@ Before getting started with this module, please take note of the following consi
 
     > **NOTE:** New releases of the module may contain features which require the minimum supported versions to be increased, but changes will be clearly documented in the release notes, user guide, and readme.
 
+Before any deployment, you should have a clear understanding of Azure Sentinel and how it works. You should also have a clear understanding of the Azure Sentinel pricing model and how it will affect your organization.
+
+Please review the [Azure Sentinel pricing](https://azure.microsoft.com/pricing/details/azure-sentinel/) page for more information.
+
 ## Mission Enclave Landing Zone Remote State Storage Account
 
 The remote state storage account is used to store the Terraform state files. The state files contain the current state of the infrastructure that has been deployed. The state files are used by Terraform to determine what changes need to be made to the infrastructure when a deployment is run.
