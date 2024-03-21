@@ -6,7 +6,7 @@ The subsequent sections will provide a summary of policy sets and policy set def
 
 > **NOTE**: Although the below sections will define which policy definitions/sets are applied at specific scopes, please remember that policy will inherit within your management group hierarchy.
 
-> <a href=./media/NoOps%20Policy%20Assignments%20v1.xlsx><img src=./media/ef73.jpg width=64 height=64 align=center></a> For convenience, an Excel version of the below information is available [here](./media/NoOps%20Policy%20Assignments%20v1.xlsx) or click the icon (last updated January 2024).
+> <a href=../../../media/NoOps%20Policy%20Assignments%20v2.xlsx><img src=../../../img/excel.png width=34 height=34 align=center></a> For convenience, an Excel version of the below information is available [here](../../../media/NoOps%20Policy%20Assignments%20v2.xlsx) or click the icon (last updated January 2024).
 
 ## Intermediate Root
 
