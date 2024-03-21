@@ -63,11 +63,11 @@ Parameter name | Default Value | Description
 
 ### Remediation Tasks and Role Assignments
 
-Role assignments and remediation tasks will be automatically created if the Policy Definition contains a list of Role Definitions. The remediation tasks will be created with the following naming convention: `remediate-<policy-definition-name>-<timestamp>`. The timestamp is used to ensure that a new remediation task is created on each `terraform apply`.
+Role assignments and remediation tasks will be automatically created if the Policy Definition contains a list of Role Definitions.
 
-You can override these with explicit Role Assignments, or specify skip_role_assignment=true to omit creation, this is also skipped when using User Managed Identities. By default role assignment scopes will match the policy assignment but can be changed by setting role_assignment_scope.
+The remediation tasks will be created with the following naming convention: `remediate-<policy-definition-name>-<timestamp>`. The timestamp is used to ensure that a new remediation task is created on each `terraform apply`. Unless you specify `skip_remediation=true`, the `*_assignment` modules will automatically create [remediation tasks](https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources) for policies containing effects of `DeployIfNotExists` and `Modify`.
 
-Unless you specify `skip_remediation=true`, the `*_assignment` modules will automatically create [remediation tasks](https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources) for policies containing effects of `DeployIfNotExists` and `Modify`. The task name is suffixed with a `timestamp()` to ensure a new one gets created on each `terraform apply`.
+You can override these with explicit Role Assignments, or specify `skip_role_assignment=true` to omit creation, this is also skipped when using User Managed Identities. By default role assignment scopes will match the policy assignment but can be changed by setting role_assignment_scope.
 
 ### Assignment Effects
 
@@ -81,7 +81,7 @@ The `Append` effect is used to add a tag to a resource if it doesn't already hav
 
 To trigger an on-demand [compliance scan](https://learn.microsoft.com/en-us/azure/governance/policy/how-to/get-compliance-data) with terraform, set `re_evaluate_compliance = true` on `*_assignment` modules, defaults to `false (ExistingNonCompliant)`.
 
-> 💡 **Note:** `ReEvaluateCompliance` only applies to remediation at Subscription scope and below and will take longer depending on the size of your environment.
+> **Note:** `ReEvaluateCompliance` only applies to remediation at Subscription scope and below and will take longer depending on the size of your environment.
 
 ### Mission Enclave General Policy Configuration
 
