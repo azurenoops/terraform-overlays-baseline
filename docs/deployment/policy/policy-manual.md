@@ -1,6 +1,6 @@
 # Deploying the Mission Enclave Policy starter using manual deployment
 
-This guide describes how to deploy Mission Enclave Policy starter using the [Terraform](https://www.terraform.io/) modules at [policy/terraform/](../policy/terraform/).
+This guide describes how to deploy Mission Enclave Policy starter using the [Terraform](https://www.terraform.io/) modules at [policy/terraform/](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/).
 
 To get started with Terraform on Azure check out their [tutorial](https://learn.hashicorp.com/collections/terraform/azure-get-started/).
 
@@ -20,9 +20,9 @@ Before you begin, ensure you have met the following requirements:
 
 ## Quickstart
 
-Below is an example of a Terraform deployment that uses all the defaults in the [TFVARS folder](./../policy/terraform/tfvars/parameters.tfvars) to deploy the Policy to one subscription.
+Below is an example of a Terraform deployment that uses all the defaults in the [TFVARS folder](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars) to deploy the Policy to one subscription.
 
->NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the `backend "local" {}` block in the [versions.tf](./../policy/terraform/versions.tf) file. This will allow you to deploy the Policy without having to deploy the remote state storage account first.
+>NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the `backend "local" {}` block in the [versions.tf](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/versions.tf) file. This will allow you to deploy the Policy without having to deploy the remote state storage account first.
 
 ```bash
 cd infrastructure/policy
@@ -72,7 +72,7 @@ Before provisioning any Azure resources with Terraform you must [initialize a wo
     cd infrastructure/policy
     ```
 
->NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the `backend "local" {}` block in the [versions.tf](./../policy/terraform/versions.tf) file. This will allow you to deploy the Policy without having to deploy the remote state storage account first. For more information on remote state, see the [Remote State documentation](../docs/07-Remote-State-Storage.md).
+>NOTE: Since this reference implementation is designed to use remote state, you will need to comment out the `backend "local" {}` block in the [versions.tf](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/versions.tf) file. This will allow you to deploy the Policy without having to deploy the remote state storage account first. For more information on remote state, see the [Remote State documentation](../docs/Remote-State-Storage.md).
 
 1. Execute `terraform init`
 

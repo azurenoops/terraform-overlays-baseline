@@ -16,15 +16,15 @@ Before getting started with this module, please take note of the following consi
 
 The remote state storage account is used to store the Terraform state files. The state files contain the current state of the infrastructure that has been deployed. The state files are used by Terraform to determine what changes need to be made to the infrastructure when a deployment is run.
 
-To find out more about remote state, see the [Remote State documentation](./remote-state-storage.md).
+To find out more about remote state, see the [Remote State documentation](../remote-state-storage.md).
 
 ## Deployment Planning
 
-If you want to change the default values, you can do so by editing the [parameters.tfvars](https://github.com/AzureNoOps/ref-scca-enclave-landing-zone-starter/infrastructure/terraform/tfvars/parameters.tfvars) file. The following sections describe the parameters that can be changed.
+If you want to change the default values, you can do so by editing the [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars) file. The following sections describe the parameters that can be changed.
 
 ### Mission Enclave Policy Global Configuration
 
-The following parameters affect the "Global Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/tfvars/parameters.tfvars).
+The following parameters affect the "Global Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -37,7 +37,7 @@ Parameter name | Default Value | Description
 
 ### Mission Enclave Policy Configuration
 
-The following parameters affect the "Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/tfvars/parameters.tfvars).
+The following parameters affect the "Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -74,7 +74,6 @@ You can override these with explicit Role Assignments, or specify `skip_role_ass
 The `Append` effect is used to add a tag to a resource if it doesn't already have it. The `DeployIfNotExists` effect is used to deploy a resource if it doesn't already exist. The `Modify` effect is used to modify a resource if it doesn't match the policy. The `Audit` effect is used to audit a resource for compliance. The `Deny` effect is used to deny a resource from being created or modified.
 
 > **Note:** If you're managing tags, it's recommended to use `Modify` instead of `Append` as Modify provides additional operation types and the ability to remediate existing resources. However, Append is recommended if you aren't able to create a managed identity or Modify doesn't yet support the alias for the resource property.
-
 > [Microsoft Docs: Understand how effects work](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effects)
 
 ### On-demand evaluation scan
@@ -85,7 +84,7 @@ To trigger an on-demand [compliance scan](https://learn.microsoft.com/en-us/azur
 
 ### Mission Enclave General Policy Configuration
 
-The following parameters affect the "General Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/tfvars/parameters.tfvars).
+The following parameters affect the "General Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -96,7 +95,7 @@ Parameter name | Default Value | Description
 
 ### Mission Enclave Logging Policy Configuration
 
-The following parameters affect the "Logging Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/tfvars/parameters.tfvars).
+The following parameters affect the "Logging Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -106,7 +105,7 @@ Parameter name | Default Value | Description
 
 ### Mission Enclave Network Policy Configuration
 
-The following parameters affect the "Network Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/tfvars/parameters.tfvars).
+The following parameters affect the "Network Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -117,18 +116,18 @@ Parameter name | Default Value | Description
 
 ### Mission Enclave Monitoring Policy Configuration
 
-The following parameters affect the "Monitoring Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/tfvars/parameters.tfvars).
+The following parameters affect the "Monitoring Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars).
 
 Example Configuration:
 
 Parameter name | Default Value | Description
 -------------- | ------------- | -----------
 `listOfResourceTypesToAuditDiagnosticSettings` | ["Microsoft.AnalysisServices/servers",  "Microsoft.ApiManagement/service",  "Microsoft.Network/applicationGateways",  "Microsoft.Automation/automationAccounts",  "Microsoft.ContainerRegistry/registries",  "Microsoft.ContainerService/managedClusters",  "Microsoft.Batch/batchAccounts",  "Microsoft.Cdn/profiles/endpoints",  "Microsoft.CognitiveServices/accounts",  "Microsoft.DocumentDB/databaseAccounts",  "Microsoft.DataFactory/factories",  "Microsoft.DataLakeAnalytics/accounts",  "Microsoft.DataLakeStore/accounts",  "Microsoft.EventGrid/topics",  "Microsoft.EventHub/namespaces",  "Microsoft.Network/expressRouteCircuits",  "Microsoft.Network/azureFirewalls",  "Microsoft.HDInsight/clusters",  "Microsoft.Devices/IotHubs",  "Microsoft.KeyVault/vaults",  "Microsoft.Network/loadBalancers",  "Microsoft.Logic/integrationAccounts",  "Microsoft.Logic/workflows",  "Microsoft.DBforMySQL/servers",  "Microsoft.Network/networkSecurityGroups",  "Microsoft.Network/bastionHosts",  "Microsoft.Kusto/clusters",  "Microsoft.DBForMariaDB/servers",  "Microsoft.DBforPostgreSQL/servers",  "Microsoft.PowerBIDedicated/capacities",  "Microsoft.Network/publicIPAddresses",  "Microsoft.RecoveryServices/vaults",  "Microsoft.Cache/redis",  "Microsoft.Relay/namespaces",  "Microsoft.Search/searchServices",  "Microsoft.ServiceBus/namespaces",  "Microsoft.SignalRService/SignalR",  "Microsoft.Sql/servers/databases",  "Microsoft.StreamAnalytics/streamingjobs",  "Microsoft.TimeSeriesInsights/environments",  "Microsoft.Network/trafficManagerProfiles",  //"Microsoft.Compute/virtualMachines", # Logs are collected through Microsoft Monitoring Agent  //"Microsoft.Compute/virtualMachineScaleSets", Removed since it is not supported,  "Microsoft.Network/virtualNetworks",  "Microsoft.Network/virtualNetworkGateways",  "Microsoft.Web/sites",  "Microsoft.Media/mediaservices",] | list of resource types to audit diagnostic settings
-`securityContactsEmail` | anoa_admins@contoso.us | The email address to send security alerts to.
+`securityContactsEmail` | `anoa_admins@contoso.us` | The email address to send security alerts to.
 
 ### Mission Enclave Key Vault Policy Configuration
 
-The following parameters affect the "Key Vault Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/tfvars/parameters.tfvars).
+The following parameters affect the "Key Vault Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars).
 
 Example Configuration:
 
@@ -138,7 +137,7 @@ Parameter name | Default Value | Description
 
 ### Mission Enclave Cost Management Policy Configuration
 
-The following parameters affect the "Cost Management Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/tfvars/parameters.tfvars).
+The following parameters affect the "Cost Management Policy Configuration". To override the defaults edit the variables file at [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-policy-starter/tree/main/infrastructure/policy/tfvars/parameters.tfvars).
 
 Example Configuration:
 
