@@ -17,3 +17,11 @@ If you are looking to reduce costs as part of evaluating the module, we recommen
 Although our examples try to minimize the use of these resources and to use lower cost SKUs where applicable, please take care to ensure you understand which resources are being deployed and the associated costs these will incur.
 
 In large environments, costs can also increase when large volumes of data are being stored in the Log Analytics workspace.
+
+## How does the Shared Responsibility Model work in NoOps?
+
+In Azure NoOps, the Shared Responsibility Model involves collaboration between development, cyber, and operations teams. Each team has specific roles but works together to ensure the success of NoOps
+
+## What are the prerequisites for successfully implementing NoOps?
+
+A user with a global admin role, familiarity with Git commands and tools such as actions, Azure CLI, Terraform, Git, access to GitHub Repo, and Visual Studio Code are some of the prerequisites. Additionally, having taken specific Microsoft Learn courses like the Fundamentals of Terraform and AZ-400 is beneficial.
