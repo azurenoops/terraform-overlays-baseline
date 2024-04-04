@@ -1,7 +1,7 @@
 site_name: Azure NoOps Terraform Baseline Guide
 
 repo_name: azurenoops/terraform-overlays-baseline
-repo_url: hhttps://github.com/azurenoops/terraform-overlays-baseline
+repo_url: https://github.com/azurenoops/terraform-overlays-baseline
 
 theme:
   name: material
