@@ -106,7 +106,7 @@ Example Configuration:
 
 Parameter name | Default Value | Description
 -------------- | ------------- | -----------
-`hub_vnet_address_space` | ["10.8.4.0/23"] | The CIDR Virtual Network Address Prefix for the Hub Virtual Network.
+`hub_vnet_address_space` | ["10.0.128.0/23"] | The CIDR Virtual Network Address Prefix for the Hub Virtual Network.
 `fw_client_snet_address_prefixes` | ["10.8.4.64/26"] | The CIDR Subnet Address Prefix for the Azure Firewall Subnet. It must be in the Hub Virtual Network space. It must be /26.
 `ampls_subnet_address_prefixes` | ["10.8.5.160/27"] |  The CIDR Subnet Address Prefix for the Azure Monitor Private Link Subnet. It must be in the Hub Virtual Network space. It must be /27.
 `fw_management_snet_address_prefixes` | ["10.8.4.128/26"] |  The CIDR Subnet Address Prefix for the Azure Firewall Management Subnet. It must be in the Hub Virtual Network space. It must be /26.
@@ -186,7 +186,7 @@ Example Configuration:
 
 Parameter name | Default Value | Description | Possible Values
 -------------- | ------------- | ----------- | ---------------
-`id_vnet_address_space` | ["10.8.9.0/24"] | The CIDR Virtual Network Address Prefix for the Identity Virtual Network.|
+`id_vnet_address_space` | ["10.0.130.0/24"] | The CIDR Virtual Network Address Prefix for the Identity Virtual Network.|
 `id_subnets` | array | The subnets to create in the identity virtual network.|
 `id_private_dns_zones` | array | The private DNS zones to create in the identity virtual network.|
 `enable_forced_tunneling_on_id_route_table` | true | Enable forced tunneling on the route table.  |  true , false
@@ -204,10 +204,28 @@ Example Configuration:
 
 Parameter name | Default Value | Description | Possible Values
 -------------- | ------------- | ----------- | ---------------
-`ops_vnet_address_space` | ["10.8.6.0/24"] | The CIDR Virtual Network Address Prefix for the Operations Virtual Network.|
+`ops_vnet_address_space` | ["10.0.131.0/24"] | The CIDR Virtual Network Address Prefix for the Operations Virtual Network.|
 `ops_subnets` | array | The subnets to create in the operations virtual network.|
 `ops_private_dns_zones` | array | The private DNS zones to create in the operations virtual network.|
 `enable_forced_tunneling_on_ops_route_table` | true | Enable forced tunneling on the route table.  |  true , false
+
+### Mission Enclave - Security Management Spoke Virtual Network
+
+The following will be created:
+
+- Resource Groups for Security Spoke Networking
+- Spoke Networks (Security)
+
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Security Management Spoke Virtual Network" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+
+Example Configuration:
+
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`sec_vnet_address_space` | ["10.0.133.0/24"] | The CIDR Virtual Network Address Prefix for the Operations Virtual Network.|
+`sec_subnets` | array | The subnets to create in the operations virtual network.|
+`sec_private_dns_zones` | array | The private DNS zones to create in the operations virtual network.|
+`enable_forced_tunneling_on_sec_route_table` | true | Enable forced tunneling on the route table.  |  true , false
 
 ### Mission Enclave - DevSecOps Management Spoke Virtual Network
 
@@ -222,7 +240,7 @@ Example Configuration:
 
 Parameter name | Default Value | Description | Possible Values
 -------------- | ------------- | ----------- | ---------------
-`devsecops_vnet_address_space` | ["10.8.7.0/24"] | The CIDR Virtual Network Address Prefix for the DevSecOps Virtual Network. |
+`devsecops_vnet_address_space` | ["10.0.132.0/24"] | The CIDR Virtual Network Address Prefix for the DevSecOps Virtual Network. |
 `devsecops_subnets` | array | The subnets to create in the devsecops virtual network. |
 `devsecops_private_dns_zones` | array | The private DNS zones to create in the devsecops virtual network. |
 `enable_forced_tunneling_on_devsecops_route_table` | true | Enable forced tunneling on the route table.  |  true , false
@@ -267,6 +285,46 @@ Parameter name | Default Value | Description | Possible Values
 `nsg_inbound_rules` | array | The inbound rules to create in the NSG for the Bastion VM. | "3389" , "5986"
 `data_disks` | array | The data disks to create for the Bastion VM. | "P30" , "P40" , "P50"
 `deploy_log_analytics_agent` | true | Deploy the Log Analytics agent for the Bastion VM. | true , false
+
+### Mission Enclave - AMPLS Configuration
+
+The following will be created:
+
+- Resource Groups for AMPLS Configuration
+- AMPLS Configuration
+
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "AMPLS Configuration" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+
+Example Configuration:
+
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`enable_ampls` | true | Enable AMPLS Configuration. | true , false
+`ampls_subnet_address_prefixes` | ["10.0.134.0/27"] | The CIDR Subnet Address Prefix for the Azure Monitor Private Link Subnet. It must be in the Operations Virtual Network space. It must be /27.
+
+### Mission Enclave - Microsoft Defender for Cloud Configuration
+
+The following will be created:
+
+- Microsoft Defender for Cloud Configuration
+
+Review and if needed, comment out and modify the variables within the "Landing Zone Configuration" section under "Microsoft Defender for Cloud Configuration" of the common variable definitions file [parameters.tfvars](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter/tree/main/infrastructure/terraform/tfvars/parameters.tfvars). Do not modify if you plan to use the default values.
+
+Example Configuration:
+
+Parameter name | Default Value | Description | Possible Values
+-------------- | ------------- | ----------- | ---------------
+`enable_defender_for_cloud` | true | Enable Microsoft Defender for Cloud Configuration. | true , false
+`security_center_contact_email` | "" | The email address to send alerts to for this subscription. | 1-64 characters
+`security_center_contact_phone` | "" | The phone number to send alerts to for this subscription. | 1-64 characters
+`security_center_alert_notifications` | true | The alert notifications to send for this subscription. | true , false
+`security_center_alerts_to_admins` | true | Send alerts to admins. | true , false
+`security_center_pricing_tier` | "Standard" | The pricing tier for Microsoft Defender for Cloud. | Free , Standard
+`security_center_pricing_resource_types` | ["KeyVaults", "StorageAccounts", "VirtualMachines"] | The resource types to monitor with Microsoft Defender for Cloud. | "VirtualMachines", "SQLServers", "KubernetesServices", "AppServices", "StorageAccounts", "KeyVaults", "CosmosDBs", "PostgreSQLServers", "MariaDBServers", "MySQLServers", "RedisCaches", "EventHubs", "ServiceBusNamespaces", "IoTHubs", "LogicApps", "APIManagementServices", "AppServiceEnvironments", "AzureFunctions", "ContainerRegistries", "ContainerInstances", "ContainerServices", "ContainerGroups"
+
+Check Azure Cloud Security Center pricing tier for more information:
+
+- [Azure Security Center pricing](https://azure.microsoft.com/en-us/pricing/details/security-center/)
 
 ### Mission Enclave - Azure Service Health Configuration
 

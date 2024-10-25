@@ -111,6 +111,7 @@ nav:
       - Manual Deployment: deployment/encrypted-transport/encrypted-transport-manual.md
       - GitHub Deployment: deployment/encrypted-transport/encrypted-transport-github.md
       - deployment/encrypted-transport/encrypted-transport-faq.md
+    - Mission Enclave Reference Add-Ons: deployment/add-ons.md
     - GitHub Actions: deployment/github-actions.md
   - FAQ:
     - Overview: faq.md
