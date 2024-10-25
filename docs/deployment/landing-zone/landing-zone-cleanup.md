@@ -31,7 +31,7 @@ This command will attempt to remove all the resources that were created by `terr
 
 # Misc Tasks
 
-The Mission Enclave Landing Zone Starter when destoryed will leave behind some resources that need to be manually deleted.
+The Mission Enclave Landing Zone Starter when destroyed may leave behind some resources that need to be manually deleted. Please check the following resources and delete them if they are not needed.
 
 ## Diagnostic Settings
 
