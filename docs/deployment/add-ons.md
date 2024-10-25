@@ -6,11 +6,11 @@ This repository contains a collection of reference starters & add-ons for Azure 
 
 Name   | Description | Status
 ------ | ----------- | ------
-[Mission Enclave Landing Zone Starter]() | Mission Enclave Landing Zone Starter for Azure NoOps | Published
-[Mission Enclave Policy Starter]() | Mission Enclave Policy Starter for Azure NoOps | Published
-[Mission Enclave Sentinel Starter with Bicep]() | Mission Enclave Sentinel Starter for Azure NoOps | Published
-[Mission Enclave Landing Zone Starter with Bicep]() | Mission Enclave Landing Zone with Bicep for Azure NoOps | Published
-[Mission Enclave AKS Starter]() | Azure Kubernetes Service Starter for Azure NoOps | Coming Soon
+[Mission Enclave Landing Zone Starter](https://github.com/azurenoops/ref-scca-enclave-landing-zone-starter) | Mission Enclave Landing Zone Starter for Azure NoOps | Published
+[Mission Enclave Policy Starter](https://github.com/azurenoops/ref-scca-enclave-policy-starter) | Mission Enclave Policy Starter for Azure NoOps | Published
+[Mission Enclave Sentinel Starter](https://github.com/azurenoops/ref-scca-enclave-sentinel-starter) | Mission Enclave Sentinel Starter for Azure NoOps | Published
+[Mission Enclave Landing Zone Starter with Bicep](https://github.com/azurenoops/ref-scca-enclave-bicep-landing-zone-starter) | Mission Enclave Landing Zone with Bicep for Azure NoOps | Coming Soon
+[Mission Enclave AKS Starter](https://github.com/azurenoops/ref-scca-enclave-kubernetes-starter) | Azure Kubernetes Service Starter for Azure NoOps | Coming Soon
 [Mission Enclave App Service Starter]() | Azure App Service Starter for Azure NoOps | Coming Soon
 
 ## Add On Contents
