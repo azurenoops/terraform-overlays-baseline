@@ -37,7 +37,7 @@ The Mission Enclave Landing Zone Starter when destroyed may leave behind some re
 
 - Delete the diagnostic settings deployed at the subscription level.
 
-> **WARNING** If you deploy and delete Mission Landing Zone in the same subscription multiple times without deleting the subscription-level diagnostic settings, the sixth deployment will fail. Azure has a limit of five diagnostic settings per subscription. The error will be similar to this: `"The limit of 5 diagnostic settings was reached."`
+> **WARNING** If you deploy and delete Mission Enclave Landing Zone Starter in the same subscription multiple times without deleting the subscription-level diagnostic settings, the sixth deployment will fail. Azure has a limit of five diagnostic settings per subscription. The error will be similar to this: `"The limit of 5 diagnostic settings was reached."`
 
 To delete the diagnotic settings in script, use the AZ CLI or PowerShell. An AZ CLI example is below:
 
