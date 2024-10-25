@@ -107,10 +107,10 @@ Example Configuration:
 Parameter name | Default Value | Description
 -------------- | ------------- | -----------
 `hub_vnet_address_space` | ["10.0.128.0/23"] | The CIDR Virtual Network Address Prefix for the Hub Virtual Network.
-`fw_client_snet_address_prefixes` | ["10.8.4.64/26"] | The CIDR Subnet Address Prefix for the Azure Firewall Subnet. It must be in the Hub Virtual Network space. It must be /26.
-`ampls_subnet_address_prefixes` | ["10.8.5.160/27"] |  The CIDR Subnet Address Prefix for the Azure Monitor Private Link Subnet. It must be in the Hub Virtual Network space. It must be /27.
-`fw_management_snet_address_prefixes` | ["10.8.4.128/26"] |  The CIDR Subnet Address Prefix for the Azure Firewall Management Subnet. It must be in the Hub Virtual Network space. It must be /26.
-`gateway_vnet_address_space` | ["10.8.4.0/27"] |  The CIDR Subnet Address Prefix for the Gateway Subnet. It must be in the Hub Virtual Network space. It must be /27. This is the subnet that will be used for the VPN Gateway. Optional, if you do not want to deploy a VPN Gateway, remove this subnet from the list.
+`fw_client_snet_address_prefixes` | ["10.0.128.0/26"] | The CIDR Subnet Address Prefix for the Azure Firewall Subnet. It must be in the Hub Virtual Network space. It must be /26.
+`ampls_subnet_address_prefixes` | ["10.0.131.64/27"] |  The CIDR Subnet Address Prefix for the Azure Monitor Private Link Subnet. It must be in the Hub Virtual Network space. It must be /27.
+`fw_management_snet_address_prefixes` | ["10.0.128.64/26"] |  The CIDR Subnet Address Prefix for the Azure Firewall Management Subnet. It must be in the Hub Virtual Network space. It must be /26.
+`gateway_vnet_address_space` | ["10.0.128.0/27"] |  The CIDR Subnet Address Prefix for the Gateway Subnet. It must be in the Hub Virtual Network space. It must be /27. This is the subnet that will be used for the VPN Gateway. Optional, if you do not want to deploy a VPN Gateway, remove this subnet from the list.
 `hub_subnets` | array | The subnets to create in the hub virtual network.
 
 ### Mission Enclave - Management Hub Operational Logging
@@ -170,7 +170,7 @@ Parameter name | Default Value | Description | Possible Values
 -------------- | ------------- | ----------- | ---------------
 `enable_bastion_host` | true | Enable Azure Bastion.  |  true , false
 `azure_bastion_host_sku` | "Standard" | The SKU for the Azure Bastion Host. |  Standard , Premium
-`azure_bastion_subnet_address_prefix` | ["10.8.4.192/27"] | The CIDR Subnet Address Prefix for the Azure Bastion Subnet. It must be in the Hub Virtual Network space. It must be /27. This is the subnet that will be used for the Azure Bastion Host. Optional, if you do not want to deploy Azure Bastion, remove this subnet from the list. |
+`azure_bastion_subnet_address_prefix` | ["10.0.128.192/26"] | The CIDR Subnet Address Prefix for the Azure Bastion Subnet. It must be in the Hub Virtual Network space. It must be /27. This is the subnet that will be used for the Azure Bastion Host. Optional, if you do not want to deploy Azure Bastion, remove this subnet from the list. |
 `hub_private_dns_zones` | array | The private DNS zones to create in the hub virtual network. |
 
 ### Mission Enclave - Identity Management Spoke Virtual Network
