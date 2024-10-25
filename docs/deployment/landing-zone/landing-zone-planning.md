@@ -137,6 +137,8 @@ Parameter name | Default Value | Description | Possible Values
 
 ### Mission Enclave - Azure Firewall Resource
 
+By default, Mission Enclave Landing Zone Starter deploys [Azure Firewall Premium](https://docs.microsoft.com/en-us/azure/firewall/premium-features). Not all regions support Azure Firewall Premium. Check here to see if the region you're deploying to [supports Azure Firewall Premium](https://docs.microsoft.com/en-us/azure/firewall/premium-features#supported-regions). If necessary you can set a different firewall SKU or location.
+
 The following will be created:
 
 - Azure Firewall (main.tf)
@@ -156,6 +158,10 @@ Parameter name | Default Value | Description | Possible Values
 `firewall_nat_rules` | array | The NAT rules to create in the firewall. | 
 
 ### Mission Enclave - Bastion/Private DNS Zones
+
+If you want to remotely access the network and the resources you've deployed, you can use Azure Bastion to remotely access virtual machines within the network without exposing them via Public IP Addresses.
+
+Deploy a Linux or Windows virtual machine as jumpboxes into the network without a Public IP Address using Azure Bastion Host by providing values for these parameters below.
 
 The following will be created:
 
@@ -304,6 +310,10 @@ Parameter name | Default Value | Description | Possible Values
 
 ### Mission Enclave - Microsoft Defender for Cloud Configuration
 
+By default [Microsoft Defender for Cloud](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction) offers a free set of monitoring capabilities that are enabled via an Azure policy when you first set up a subscription and view the Microsoft Defender for Cloud portal blade.
+
+Microsoft Defender for Cloud offers a standard/defender sku which enables a greater depth of awareness including more recomendations and threat analytics. You can enable this higher depth level of security in Mission Enclave Landing Zone Starter by setting the parameter deployDefender during deployment. In addition you can include the security_center_contact_email parameter to set a contact email for alerts.
+
 The following will be created:
 
 - Microsoft Defender for Cloud Configuration
@@ -322,9 +332,9 @@ Parameter name | Default Value | Description | Possible Values
 `security_center_pricing_tier` | "Standard" | The pricing tier for Microsoft Defender for Cloud. | Free , Standard
 `security_center_pricing_resource_types` | ["KeyVaults", "StorageAccounts", "VirtualMachines"] | The resource types to monitor with Microsoft Defender for Cloud. | "VirtualMachines", "SQLServers", "KubernetesServices", "AppServices", "StorageAccounts", "KeyVaults", "CosmosDBs", "PostgreSQLServers", "MariaDBServers", "MySQLServers", "RedisCaches", "EventHubs", "ServiceBusNamespaces", "IoTHubs", "LogicApps", "APIManagementServices", "AppServiceEnvironments", "AzureFunctions", "ContainerRegistries", "ContainerInstances", "ContainerServices", "ContainerGroups"
 
-Check Azure Cloud Security Center pricing tier for more information:
+The Defender plan for Microsoft Defender for Cloud is enabled by default in the following [Azure Environments](https://learn.microsoft.com/powershell/module/servicemanagement/azure.service/get-azureenvironment?view=azuresmps-4.0.0): AzureCloud. To enable this for other Azure Cloud environments, this will need to executed manually. Documentation on how to do this can be found [here](https://learn.microsoft.com/azure/defender-for-cloud/enable-enhanced-security).
 
-- [Azure Security Center pricing](https://azure.microsoft.com/en-us/pricing/details/security-center/)
+Learn more about [Microsoft Defender for Cloud pricing](https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/).
 
 ### Mission Enclave - Azure Service Health Configuration
 
