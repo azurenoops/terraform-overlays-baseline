@@ -1,13 +1,17 @@
 # Azure NoOps Reference Starters & Add-Ons
 
-This repository contains a collection of rReference starters & add-ons for Azure NoOps. These starters and add-ons are designed to help you get started with Azure NoOps and provide a starting point for your own projects.
+This repository contains a collection of reference starters & add-ons for Azure NoOps. These starters and add-ons are designed to help you get started with Azure NoOps and provide a starting point for your own projects.
 
 ## Reference Starters Contents
 
 Name   | Description | Status
 ------ | ----------- | ------
-[AKS Starter]() | Azure Kubernetes Service Starter for Azure NoOps | Coming Soon
-[App Service Starter]() | Azure App Service Starter for Azure NoOps | Coming Soon
+[Mission Enclave Landing Zone Starter]() | Mission Enclave Landing Zone Starter for Azure NoOps | Published
+[Mission Enclave Policy Starter]() | Mission Enclave Policy Starter for Azure NoOps | Published
+[Mission Enclave Sentinel Starter with Bicep]() | Mission Enclave Sentinel Starter for Azure NoOps | Published
+[Mission Enclave Landing Zone Starter with Bicep]() | Mission Enclave Landing Zone with Bicep for Azure NoOps | Published
+[Mission Enclave AKS Starter]() | Azure Kubernetes Service Starter for Azure NoOps | Coming Soon
+[Mission Enclave App Service Starter]() | Azure App Service Starter for Azure NoOps | Coming Soon
 
 ## Add On Contents
 
