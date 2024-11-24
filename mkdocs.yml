@@ -79,27 +79,6 @@ nav:
     - Module structure: developing-modules/module-structure.md
     - Module testing: developing-modules/module-testing.md
     - Module documentation: developing-modules/module-documentation.md
-  - Platform Engineering:
-    - Overview: platform-engineering/overview.md
-    - Labs: 
-      - Azure Deployment Environments:    
-        - platform-engineering/labs/ade/index.md
-        - platform-engineering/labs/de/prerequisites.md
-        - platform-engineering/labs/ade/use-case.md
-        - platform-engineering/labs/ade/syntax.md      
-        - platform-engineering/labs/ade/create-resources.md
-        - platform-engineering/labs/ade/update-resources.md
-        - platform-engineering/labs/ade/destroy-resources.md
-        - platform-engineering/labs/ade/summary.md
-      - Backstage:    
-        - platform-engineering/labs/backstage/index.md
-        - platform-engineering/labs/backstage/prerequisites.md
-        - platform-engineering/labs/backstage/use-case.md
-        - platform-engineering/labs/backstage/syntax.md      
-        - platform-engineering/labs/backstage/create-resources.md
-        - platform-engineering/labs/backstage/update-resources.md
-        - platform-engineering/labs/backstage/destroy-resources.md
-        - platform-engineering/labs/backstage/summary.md
   - Deployment Guides:   
     - deployment/prerequisites.md 
     - Terraform Remote State: deployment/remote-state-storage.md
@@ -145,8 +124,27 @@ nav:
     - GitHub Actions: deployment/github-actions.md
   - FAQ:
     - Overview: faq.md
-  - Azure NoOps Workshop:
-    - Overview: workshop.md
+  - Platform Engineering Workshop:
+    - Overview: platform-engineering/overview.md
+    - Labs: 
+      - Azure Deployment Environments:    
+        - platform-engineering/labs/ade/index.md
+        - platform-engineering/labs/de/prerequisites.md
+        - platform-engineering/labs/ade/use-case.md
+        - platform-engineering/labs/ade/syntax.md      
+        - platform-engineering/labs/ade/create-resources.md
+        - platform-engineering/labs/ade/update-resources.md
+        - platform-engineering/labs/ade/destroy-resources.md
+        - platform-engineering/labs/ade/summary.md
+      - Backstage:    
+        - platform-engineering/labs/backstage/index.md
+        - platform-engineering/labs/backstage/prerequisites.md
+        - platform-engineering/labs/backstage/use-case.md
+        - platform-engineering/labs/backstage/syntax.md      
+        - platform-engineering/labs/backstage/create-resources.md
+        - platform-engineering/labs/backstage/update-resources.md
+        - platform-engineering/labs/backstage/destroy-resources.md
+        - platform-engineering/labs/backstage/summary.md
 
 copyright: Copyright &copy; 2024 - Microsoft Corporation
 extra:
