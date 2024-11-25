@@ -145,7 +145,7 @@ nav:
         - Install Backstage: platform-engineering/labs/backstage/install.md
         - Configure Backstage: platform-engineering/labs/backstage/configuration.md
         - Add Authentation: platform-engineering/labs/backstage/add-identity.md
-        - Add Plugins: platform-engineering/labs/backstage/plugins.md
+        - Add Plugins: 
           - GitHub: platform-engineering/labs/backstage/add-github.md
         - Summery: platform-engineering/labs/backstage/summary.md
 
